@@ -17,7 +17,15 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: Symmetric
+
+   sym/cmac
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Signature
 
    sig/qdsa
+
 
