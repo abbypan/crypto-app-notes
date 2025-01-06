@@ -1,0 +1,12 @@
+telegram
+============
+
+`MTProto Mobile Protocol <https://core.telegram.org/mtproto>`_
+
+基于RSA的DH， `msg_key` 的派生较原始。
+
+默认 `cloud chat <https://core.telegram.org/mtproto/description>`_ 模式，server-client初始化DH的 `auth_key` 基本不动。
+
+e2e的Secret Chats，FS通过每100条message轮换DH实现，key fingerprint由用户查看确认，希望用户认真吧。
+
+核心问题在于RSA的p/q由server给出，轻重随意。
