@@ -8,7 +8,7 @@ Schnorr signature
 
 .. math::
 
-    \begin{eqnarray}
+    \begin{align*}
     &X = xG\\
     \\
     &R = rG\\
@@ -18,7 +18,7 @@ Schnorr signature
     &sig = (R,s)\\
     \\
     &sG = R + cX\\
-    \end{eqnarray}
+    \end{align*}
 
 
 
@@ -37,7 +37,7 @@ rouge key attack
 
 .. math::
 
-    \begin{eqnarray}
+    \begin{align*}
     &X_{i} = x_{i}G \\
     &L = H(X1, ..., Xn) \\
      \\
@@ -54,7 +54,7 @@ rouge key attack
     &round 1: H(R_{i}) \\
     &round 2: R_{i} \\
     &round 3: s_{i} \\
-    \end{eqnarray}
+    \end{align*}
 
 
 MuSig2
@@ -69,7 +69,7 @@ omdl
 
 .. math::
 
-    \begin{eqnarray}
+    \begin{align*}
     &R_{i}' = r_{i}'G \\
     &R' = ΣR_{i}' \\
     \\
@@ -88,7 +88,7 @@ omdl
     \\
     &round 1: R_{i}', R_{i}''\\
     &round 2: s_{i}\\
-    \end{eqnarray}
+    \end{align*}
 
 
 
@@ -103,7 +103,7 @@ Deterministic Nonce
 
 .. math::
 
-    \begin{eqnarray}
+    \begin{align*}
     &sk_{i} \rightarrow x_i, u_i, k_i \\
     \\
     &host~key: U_{i} = u_{i}G\\
@@ -127,4 +127,4 @@ Deterministic Nonce
     \\
     &round 1: R_i, π_i\\
     &round 2: s_i\\
-    \end{eqnarray}
+    \end{align*}
