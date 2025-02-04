@@ -77,6 +77,13 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: Connectivity
+
+   connectivity/matter
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Attack
 
    attack/putty-p521
