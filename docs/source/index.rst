@@ -20,6 +20,7 @@
    :caption: Signature
 
    sig/qdsa
+   sig/frost
 
 
 .. toctree::
