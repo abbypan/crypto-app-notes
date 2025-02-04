@@ -69,6 +69,13 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: nizk
+
+   nizk/schnorr-musig
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Attack
 
    attack/putty-p521
