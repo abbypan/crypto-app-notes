@@ -21,6 +21,8 @@
 
    sig/qdsa
    sig/frost
+   sig/key-blinding
+   sig/dss
 
 
 .. toctree::
@@ -52,6 +54,18 @@
 
    cred/cookie-dbsc
 
+.. toctree::
+   :maxdepth: 1
+   :caption: PAKE
+
+   pake/dragonfly
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: SMC
+
+   smc/vdaf
 
 .. toctree::
    :maxdepth: 1
@@ -63,14 +77,14 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: bitcoin
+   :caption: Bitcoin
 
    bitcoin/hd-wallets
 
 
 .. toctree::
    :maxdepth: 1
-   :caption: nizk
+   :caption: NIZK
 
    nizk/schnorr-musig
 
