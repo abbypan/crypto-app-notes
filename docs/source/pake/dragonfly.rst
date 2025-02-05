@@ -15,6 +15,7 @@ Derivation of the Password Element
 .. math::
 
     temp = KDF-n(base, "Dragonfly Hunting and Pecking")
+
     seed = (temp mod (p - 1)) + 1
 
 #. 如果seed二次剩余，则作为x；否则counter++，重新计算base。
@@ -29,6 +30,7 @@ q为阶
 .. math::
 
     scalar = (private + mask) mod q
+
     Element = - mask * PE
 
 
@@ -37,8 +39,11 @@ q为阶
 .. math::
 
     share = private * (peer-Element + peer-scalar * PE) 
+
           = private * peer-private * PE
+
     ss = F(share)
+
     kck | mk = KDF-n(ss, "Dragonfly Key Derivation")
 
 
