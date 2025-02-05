@@ -45,6 +45,7 @@
    :caption: Application
 
    app/telegram
+   app/matter
 
 
 .. toctree::
@@ -99,7 +100,7 @@
    :maxdepth: 1
    :caption: Connectivity
 
-   connectivity/matter
+   connectivity/noise
 
 
 .. toctree::
