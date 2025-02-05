@@ -17,6 +17,12 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: Hash
+
+   hash/sha3-df
+
+.. toctree::
+   :maxdepth: 1
    :caption: Signature
 
    sig/qdsa
