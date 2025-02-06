@@ -29,6 +29,14 @@
    sig/frost
    sig/key-blinding
    sig/dss
+   sig/rsa-blind-sig
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Key Exchange
+
+   kex/noise
+   kex/ipsec-ike
 
 
 .. toctree::
@@ -53,6 +61,8 @@
    :caption: Privacy
 
    privacy/sd-jwt
+   privacy/verifiable-cred
+   privacy/differential-privacy
 
 
 .. toctree::
@@ -60,6 +70,8 @@
    :caption: Credential
 
    cred/cookie-dbsc
+
+
 
 .. toctree::
    :maxdepth: 1
@@ -94,13 +106,6 @@
    :caption: NIZK
 
    nizk/schnorr-musig
-
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Connectivity
-
-   connectivity/noise
 
 
 .. toctree::
