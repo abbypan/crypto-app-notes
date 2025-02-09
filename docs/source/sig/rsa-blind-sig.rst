@@ -16,7 +16,9 @@ RSABSSA
 .. raw::
 
     client -> server :  blinded_msg, inv = blind(pkS, msg)
+
     server -> client :  blind_sig = blind_sign(skS, blinded_msg)
+
     client : sig = Finalize(pkS, msg, blind_sig, inv)
 
 blind
@@ -31,8 +33,11 @@ blind
 .. math::
 
     x = RSAVP1(pkS, r) = r^e mod n 
+
     z = m * x mod n
+
     blinded_msg = I2OSP(z, kLen)
+
     inv = I2OSP(r_inv, kLen)
 
 blindSign
@@ -41,9 +46,13 @@ blindSign
 .. math::
 
     z = OS2IP(blinded_msg)
+
     blind_s = RSASP1(skS, z) = z^d mod n = (m^d) * (r^e)^d mod n = (m^d) * r mod n
+
     z' = RSAVP1(pkS, blind_s)
+
     z' == z
+
     blind_sig = I2OSP(blind_s, kLen)
 
 Finalize
@@ -52,10 +61,15 @@ Finalize
 .. math::
 
     blind_s = OS2IP(blinded_sig) 
+
     r_inv = OS2IP(inv)
+
     s = blind_s * r_inv mod n = (m^d) mod n
+
     sig = I2OSP(s, kLen)
+
     result = RSASSA-PSS-VERIFY(pkS, msg, sig)
+
 
 security
 ==========

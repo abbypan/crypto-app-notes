@@ -23,6 +23,13 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: KDF
+
+   kdf/hkdf
+   kdf/pbkdf
+
+.. toctree::
+   :maxdepth: 1
    :caption: Signature
 
    sig/qdsa
@@ -30,30 +37,58 @@
    sig/key-blinding
    sig/dss
    sig/rsa-blind-sig
+   sig/eddsa
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: ENC
+
+   enc/hpke
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: PKCS
+
+   pkcs/pkcs1-rsa
+
+
 
 .. toctree::
    :maxdepth: 1
    :caption: Key Exchange
 
+   kex/key-estab
    kex/noise
    kex/ipsec-ike
+   kex/x3dh
+   kex/double-ratchet
+   kex/mls
+   kex/kyber-kex
+   kex/pqxdh
+   kex/pq3
 
 
 .. toctree::
    :maxdepth: 1
    :caption: PQC
 
-   pqc/kyber-kex
-   pqc/pqxdh
-   pqc/pq3
+   pqc/hash-based-sig
+   pqc/code-based-crypto
+   pqc/multivar-crypto
+   pqc/lattice
+   pqc/supersingular
+
 
 
 .. toctree::
    :maxdepth: 1
    :caption: Application
 
-   app/telegram
    app/matter
+   app/telegram
+   app/whatsapp
 
 
 .. toctree::
@@ -106,6 +141,13 @@
    :caption: NIZK
 
    nizk/schnorr-musig
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: QKD
+
+   qkd/skip
 
 
 .. toctree::
