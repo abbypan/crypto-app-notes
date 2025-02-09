@@ -1,5 +1,5 @@
 PKCS#1 RSA
-=============
+#############
 
 `RSA Key Formats <https://www.cryptosys.net/pki/rsakeyformats.html>`_
 

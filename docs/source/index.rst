@@ -17,6 +17,13 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: Key
+
+   key/key
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Hash
 
    hash/sha3-df
@@ -51,7 +58,18 @@
    :maxdepth: 1
    :caption: PKCS
 
+   pkcs/asn1
    pkcs/pkcs1-rsa
+   pkcs/pkcs3-dh
+   pkcs/pkcs5-pwd-crypto
+   pkcs/pkcs7-cms
+   pkcs/cms-aes
+   pkcs/pkcs8-privkey
+   pkcs/pkcs9-attr
+   pkcs/pkcs10-csr
+   pkcs/pkcs11-cryptoki
+   pkcs/pkcs12-pfx
+   pkcs/pkcs15-crypto-token
 
 
 
@@ -89,6 +107,7 @@
    app/matter
    app/telegram
    app/whatsapp
+   app/zoom
 
 
 .. toctree::
@@ -141,6 +160,13 @@
    :caption: NIZK
 
    nizk/schnorr-musig
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: IBE
+
+   ibe/ibe
 
 
 .. toctree::
