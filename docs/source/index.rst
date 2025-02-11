@@ -19,6 +19,7 @@
    sym/key-wrap
    sym/siv
    sym/xts
+   sym/cbc-padding-oracle-attack
 
 
 .. toctree::
@@ -51,6 +52,10 @@
    sig/dss
    sig/rsa-blind-sig
    sig/eddsa
+   sig/hedged-sig
+   sig/bls-sig
+   sig/bbs-sig
+   sig/frost
 
 
 .. toctree::
