@@ -12,7 +12,13 @@
    :maxdepth: 1
    :caption: Symmetric
 
+   sym/aes
+   sym/aead
    sym/cmac
+   sym/cts
+   sym/key-wrap
+   sym/siv
+   sym/xts
 
 
 .. toctree::
@@ -63,6 +69,7 @@
    pkcs/pkcs3-dh
    pkcs/pkcs5-pwd-crypto
    pkcs/pkcs7-cms
+   pkcs/rsa-kem-cms.rst
    pkcs/cms-aes
    pkcs/pkcs8-privkey
    pkcs/pkcs9-attr
