@@ -129,6 +129,7 @@
    privacy/sd-jwt
    privacy/verifiable-cred
    privacy/differential-privacy
+   privacy/privacy-pass
 
 
 .. toctree::
