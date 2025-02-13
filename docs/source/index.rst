@@ -130,6 +130,7 @@
    privacy/verifiable-cred
    privacy/differential-privacy
    privacy/privacy-pass
+   privacy/daa
 
 
 .. toctree::
@@ -166,6 +167,7 @@
    :caption: Bitcoin
 
    bitcoin/hd-wallets
+   bitcoin/bitid
 
 
 .. toctree::
