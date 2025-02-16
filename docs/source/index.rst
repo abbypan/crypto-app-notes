@@ -10,6 +10,13 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: random
+
+   random/dual-ec-drbg
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Symmetric
 
    sym/aes
@@ -133,12 +140,6 @@
    privacy/daa
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Credential
-
-   cred/cookie-dbsc
-
 
 
 .. toctree::
@@ -197,5 +198,6 @@
 
    attack/putty-p521
    attack/ssh-terrapin
+   attack/perl-hash-att
 
 
