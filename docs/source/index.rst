@@ -21,6 +21,7 @@
 
    sym/aes
    sym/aead
+   sym/block-cipher-mode
    sym/cmac
    sym/cts
    sym/key-wrap
@@ -41,6 +42,13 @@
    :caption: Hash
 
    hash/sha3-df
+
+.. toctree::
+   :maxdepth: 1
+   :caption: mac
+
+   mac/hmac
+
 
 .. toctree::
    :maxdepth: 1
@@ -75,8 +83,11 @@
 .. toctree::
    :maxdepth: 1
    :caption: PKCS
-
+ 
+   pkcs/pki
    pkcs/asn1
+   pkcs/x509v3
+   pkcs/pkcs-ftype
    pkcs/pkcs1-rsa
    pkcs/pkcs3-dh
    pkcs/pkcs5-pwd-crypto
