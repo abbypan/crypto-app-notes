@@ -18,6 +18,7 @@
    :maxdepth: 1
    :caption: random
 
+   random/drbg
    random/dual-ec-drbg
 
 
@@ -104,6 +105,7 @@
     ecc/ecies
     ecc/pairing
     ecc/ecc-attack
+    ecc/secg
 
 
 .. toctree::
@@ -184,7 +186,25 @@
    :maxdepth: 1
    :caption: PAKE
 
+   pake/pake
+
+.. toctree::
+   :maxdepth: 1
+   :caption: balance PAKE
+
    pake/dragonfly
+   pake/cpace
+   pake/spake2
+   pake/sespake
+   pake/j-pake
+
+.. toctree::
+   :maxdepth: 1
+   :caption: augment PAKE
+
+   pake/opaque
+   pake/spake2plus
+   pake/srp
 
 
 .. toctree::

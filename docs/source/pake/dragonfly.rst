@@ -3,8 +3,14 @@ Dragonfly Key Exchange
 
 `RFC7664 <https://www.rfc-editor.org/rfc/rfc7664.html>`_
 
+PS: 这个RFC不好读，主要原因是，它把椭圆曲线的加法和乘法又重新用函数表述了一下
+
 Derivation of the Password Element
 ======================================
+
+把pw通过指定的F函数，映射为ECC上的一个点: F(pw), 文档里记为PE
+
+PE做为下面计算的基点base
 
 1. 基于双方id、password、counter计算hash，得到base
 
@@ -25,6 +31,8 @@ Derivation of the Password Element
 Commit Exchange
 =================
 
+通信双方各自随机选两个整数，一个private， 一个mask
+
 q为阶
 
 .. math::
@@ -35,6 +43,10 @@ q为阶
 
 
 双方互相发送 (scalar, Element)
+
+显然，最终双方能获得 private_a*private_b*PE
+
+然后再派生出kck = key confirm key，mk = master key
 
 .. math::
 
@@ -68,3 +80,9 @@ side-channel attack
 
 small subgroup
 
+usage
+=========
+
+`TLS-PWD, RFC8492 <https://tools.ietf.org/html/rfc8492>`_ 
+
+WIFI WPA3
