@@ -10,6 +10,12 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: base
+
+   base/crypto
+
+.. toctree::
+   :maxdepth: 1
    :caption: random
 
    random/dual-ec-drbg
@@ -28,6 +34,14 @@
    sym/siv
    sym/xts
    sym/cbc-padding-oracle-attack
+   sym/karn
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: LWC
+
+   lwc/lwc
 
 
 .. toctree::
@@ -66,6 +80,7 @@
    sig/key-blinding
    sig/dss
    sig/rsa-blind-sig
+   sig/ecdsa
    sig/eddsa
    sig/hedged-sig
    sig/bls-sig
@@ -78,6 +93,17 @@
    :caption: ENC
 
    enc/hpke
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: ecc
+
+    ecc/ecc
+    ecc/ec-elgamal
+    ecc/ecies
+    ecc/pairing
+    ecc/ecc-attack
 
 
 .. toctree::
@@ -138,6 +164,7 @@
    app/telegram
    app/whatsapp
    app/zoom
+   app/proto-impersonate
 
 
 .. toctree::
@@ -172,6 +199,7 @@
 
    zkp/index
    zkp/kvac
+   zkp/feige-fiat-shamir
 
 
 .. toctree::
@@ -210,5 +238,6 @@
    attack/putty-p521
    attack/ssh-terrapin
    attack/perl-hash-att
+   attack/dh-attack
 
 

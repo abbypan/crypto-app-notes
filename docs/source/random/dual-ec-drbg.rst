@@ -4,6 +4,10 @@ Dual_EC_DRBG
 background
 ==========================================================
 
+NIST 800-90  random 
+
+RFC 8937 Randomness Improvements for Security Protocols
+
 http://blog.0xbadc0de.be/archives/155
 
 随机数生成算法 NSA后门

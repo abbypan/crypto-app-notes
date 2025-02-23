@@ -9,6 +9,12 @@ ed25519
 
 `ed25519-High-speed high-security signatures <https://ed25519.cr.yp.to/ed25519-20110705.pdf>`_
 
+`EdDSA for more curves <https://eprint.iacr.org/2015/677>`_
+
+`Curve25519: new Diffie-Hellman speed records <https://www.iacr.org/cryptodb/archive/2006/PKC/3351/3351.pdf>`_
+
+secret EdDSA scalars 是 n+1 bits，c<=n<=b （这里b=256，c=3），n应该足够大，抗kangaroo攻击。注意，最高bit置1，最低的c bits置0。
+
 background
 ======================================
 
@@ -31,6 +37,13 @@ R = rB，并压缩表达为 R_ 。
 签名是(R_, S_)，共2*b bits
 
 验签可以是 8SB = 8R + 8H(R_, A_, M)A
+
+sign bit
+==========================================================
+
+如果 b-1 bits 的 x > b-1 bits 的 -x，则，置 x 为 negative
+
+压缩表示 b bits 的 (x , y )： b-1 bits 的 y，加上一个sign bit；如果sign bit为1，则标识 x 为 negative。
 
 r
 ======================================
@@ -77,4 +90,21 @@ fast decompression
 如果每个签名都valid，则，:math:`z_i*P_i` 之和必定为0。
 
 由于 :math:`z_i` 随机，当某个 :math:`P_i` 不为0（即invalid signature），而 :math:`z_i*P_i` 恰好为0时，可能有false positive，但不会false negative。
+
+pureEdDSA
+==========================================================
+
+k 为 EdDSA secret key，b bits string
+
+通过 H(k) 转换为 2b bits 的 string，然后拆分计算签名。由于最终签名(R, S)都有消息M的参与，比较抗锻造。
+
+cofactorless verification
+==========================================================
+
+默认的校验是等式两边都乘上 cofactor = 2^c 做校验。如果等式两边不乘以cofactor，即为cofactorless verification。
+
+small group attack
+==========================================================
+
+基点选得不好，non-prime order，可能被Pohlig-Hellman method加速计算。
 

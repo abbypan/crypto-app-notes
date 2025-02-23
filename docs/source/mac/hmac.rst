@@ -39,3 +39,10 @@ RFC4868
 注意参看2.7.2节的示例
 
 Block size可以padding对齐，Output length长度固定，Authenticator length取Output的前一半
+
+doc
+===========
+
+NIST 800-38
+
+FIPS 198

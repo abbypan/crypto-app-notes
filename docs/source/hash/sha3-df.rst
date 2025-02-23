@@ -1,7 +1,6 @@
 SHA-3 Derived Functions
 #############################
 
-`SP 800-185 SHA-3 Derived Functions: cSHAKE, KMAC, TupleHash, and ParallelHash <https://csrc.nist.gov/publications/detail/sp/800-185/final>`_
 
 4个函数底层都基于KECCAK。
 
@@ -113,5 +112,11 @@ K长度不应低于security strength。
 MAC场景下，L长度不应低于32bits，尽量>=64bits。
 
 
+doc
+======
 
+- `SP 800-185 SHA-3 Derived Functions: cSHAKE, KMAC, TupleHash, and ParallelHash <https://csrc.nist.gov/publications/detail/sp/800-185/final>`_
+- `FIPS 202 SHA-3 Standardization <https://csrc.nist.gov/Projects/Hash-Functions/SHA-3-Project/SHA-3-Standardization)>`_
+- `FIPS 180-4 Secure Hash Standard (SHS) <https://csrc.nist.gov/publications/detail/fips/180/4/final)>`_
+- `NIST Policy on Hash Functions <https://csrc.nist.gov/Projects/Hash-Functions/NIST-Policy-on-Hash-Functions)>`_
 

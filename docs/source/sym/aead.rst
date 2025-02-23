@@ -33,3 +33,11 @@ K, NONCE(要求24 bytes，要求random) -> KC, DK
 KC用于key commitment用于校验
 
 DK, 全0的NONCE用于加密
+
+
+doc
+----------------------------------------------------------
+
+- `Usage Limits on AEAD Algorithms <https://datatracker.ietf.org/doc/draft-irtf-cfrg-aead-limits/>`_
+- `Properties of AEAD algorithms <https://datatracker.ietf.org/doc/draft-irtf-cfrg-aead-properties/>`_
+- `Authenticated Encryption:Relations among notions and analysis of the generic composition paradigm <https://cseweb.ucsd.edu/~mihir/papers/oem.pdf>`_

@@ -1,7 +1,6 @@
 hkdf
 ======================================
 
-`RFC 5869: HMAC-based Extract-and-Expand Key Derivation Function (HKDF) <https://tools.ietf.org/html/rfc5869>`_
 
 .. raw::
 
@@ -24,3 +23,8 @@ hkdf
         ...
 
 
+doc
+=======
+
+- `RFC 5869: HMAC-based Extract-and-Expand Key Derivation Function (HKDF) <https://tools.ietf.org/html/rfc5869>`_
+- `NIST 800-108 <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf)>`_
