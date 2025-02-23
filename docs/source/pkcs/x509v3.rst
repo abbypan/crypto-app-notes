@@ -90,3 +90,11 @@ CRL
             crlExtensions           [0]  EXPLICIT Extensions OPTIONAL
                                           -- if present, version MUST be v2
                                       }
+
+
+doc
+----
+
+- `key usage <https://ldapwiki.com/wiki/KeyUsage>`_
+- `Specifying Distinguished Names <https://www.cryptosys.net/pki/manpki/pki_distnames.html>`_
+- `Class KeyUsage <http://rcardon.free.fr/websign/download/api-x509-ext/be/cardon/asn1/x509/extensions/KeyUsage.html>`_

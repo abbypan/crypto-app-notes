@@ -13,6 +13,7 @@
    :caption: base
 
    base/crypto
+   base/bsi-tr-02102-1
 
 .. toctree::
    :maxdepth: 1
@@ -20,6 +21,9 @@
 
    random/drbg
    random/dual-ec-drbg
+   random/random-improve
+   random/vrf
+   random/oprfs
 
 
 .. toctree::
@@ -106,6 +110,7 @@
     ecc/pairing
     ecc/ecc-attack
     ecc/secg
+    ecc/h2c
 
 
 .. toctree::
@@ -128,6 +133,7 @@
    pkcs/pkcs11-cryptoki
    pkcs/pkcs12-pfx
    pkcs/pkcs15-crypto-token
+   pkcs/sec-ca-ops
 
 
 
@@ -137,6 +143,7 @@
 
    kex/key-estab
    kex/noise
+   kex/ake
    kex/ipsec-ike
    kex/x3dh
    kex/double-ratchet
@@ -167,12 +174,14 @@
    app/whatsapp
    app/zoom
    app/proto-impersonate
+   app/e2ee-group-msg
 
 
 .. toctree::
    :maxdepth: 1
    :caption: Privacy
 
+   privacy/privacy
    privacy/sd-jwt
    privacy/verifiable-cred
    privacy/differential-privacy
@@ -217,9 +226,16 @@
    :maxdepth: 1
    :caption: ZKP
 
-   zkp/index
-   zkp/kvac
-   zkp/feige-fiat-shamir
+    zkp/kvac
+    zkp/feige-fiat-shamir
+    zkp/schnorr-zkp
+    zkp/zkp
+    zkp/kzg10
+    zkp/groth16
+    zkp/bccgp16
+    zkp/bulletproofs
+    zkp/nova
+
 
 
 .. toctree::
@@ -228,6 +244,7 @@
 
    bitcoin/hd-wallets
    bitcoin/bitid
+   bitcoin/vdf
 
 
 .. toctree::
