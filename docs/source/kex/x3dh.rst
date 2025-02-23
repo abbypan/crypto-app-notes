@@ -25,7 +25,7 @@ dh
 
 设计了4个DH值：
 
-.. raw::
+.. note::
 
     DH1: IK_A & SPK_B
     DH2: EK_A & IK_B
@@ -41,7 +41,7 @@ dh
 - DH4可以保证一定的`伪`前向安全性，前提是server不作恶
 
 
-.. raw::
+.. note::
 
    associated data： 
    AD = Encode(IKA) || Encode(IKB)

@@ -13,7 +13,7 @@ untracable payment
 RSABSSA
 ==========
 
-.. raw::
+.. note::
 
     client -> server :  blinded_msg, inv = blind(pkS, msg)
 

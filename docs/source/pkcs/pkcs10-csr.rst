@@ -20,7 +20,7 @@ CA签发证书之前，必须校验CSR中的签名。
 CertificationRequestInfo
 ==========================================================
 
-.. raw::
+.. note::
 
     CertificationRequestInfo ::= SEQUENCE {
             version       INTEGER { v1(0) } (v1,...),

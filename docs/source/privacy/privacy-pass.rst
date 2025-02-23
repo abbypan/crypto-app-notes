@@ -27,7 +27,7 @@ privacy pass protocol:
 
 phase:
 
-.. raw::
+.. note::
    
     1) issuer server setup:
     skS, pkS
@@ -87,7 +87,7 @@ browser extension usage
 Signing phase
 ----------------------------------------------------------
 
-.. raw::
+.. note::
 
     C samples a random ‘blind’ r ← ZZ_q  #模为q的整数环
     C computes T = H_1(t) and then blinds it by computing rT  
@@ -98,7 +98,7 @@ Signing phase
 Redemption phase
 ----------------------------------------------------------
 
-.. raw::
+.. note::
 
     C calculates request binding data req and chooses an unspent token (t,N)
     C calculates a shared key sk = H_2(t,N) and sends (t, MAC_sk(req)) to S  #sk即共同密钥

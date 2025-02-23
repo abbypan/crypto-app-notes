@@ -179,6 +179,15 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: Apple
+
+   apple/continuity
+   apple/hap
+   appple/airdrop  
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Privacy
 
    privacy/privacy

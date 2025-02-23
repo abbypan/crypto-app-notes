@@ -32,7 +32,7 @@ implicit vs explicit
 
 默认explicit
 
-.. raw::
+.. note::
 
     Type1 ::= VisibleString 
     Type2 ::= [APPLICATION 3] IMPLICIT Type1 
@@ -42,7 +42,7 @@ implicit vs explicit
 
 value: Jones
 
-.. raw::
+.. note::
    
     Type1: 
     0x1A=0b00011010 0x05 0x4A6F6E657
@@ -102,7 +102,7 @@ bit string 的 value 部分的首个字节，标识了将该bit string长度填�
 30 82 02 10 04 01 56 …
 ----------------------------------------------------------
 
-.. raw::
+.. note::
 
     tag: 0x30 = 0b00110000 
 
@@ -159,7 +159,7 @@ value: 12 34 56 78 90
 oid 1.3.6.1.4.1.311.21.20 
 ----------------------------------------------------
 
-.. raw::
+.. note::
 
     06 09                                ; OBJECT_ID (9 Bytes)
     |  2b 06 01 04 01 82 37 15 14

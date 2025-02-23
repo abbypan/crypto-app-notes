@@ -46,7 +46,7 @@ PFX PDU Syntax
 PFX
 ----------------------------------------------------
 
-.. raw::
+.. note::
 
      PFX ::= SEQUENCE {
            version     INTEGER {v3(3)}(v3,...),
@@ -65,7 +65,7 @@ PFX
 AuthenticatedSafe
 ----------------------------------------------------
 
-.. raw::
+.. note::
 
      AuthenticatedSafe ::= SEQUENCE OF ContentInfo
            -- Data if unencrypted
@@ -82,7 +82,7 @@ SafeContents 由 SafeBags 组成
 
 每个SafeBag含有一部分信息，例如一个秘钥、一个证书，等等。以object identifier标识信息类型。
 
-.. raw::
+.. note::
    
     SafeContents ::= SEQUENCE OF SafeBag
 
@@ -95,7 +95,7 @@ SafeContents 由 SafeBags 组成
 SafeBag Type
 ----------------------------------------------------
 
-.. raw::
+.. note::
 
     bagtypes OBJECT IDENTIFIER ::= {pkcs-12 10 1}
 

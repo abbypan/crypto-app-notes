@@ -52,7 +52,7 @@ MAS函数例如HMAC-SHA-1, HMAC-SHA-2
 ASN.1 Syntax
 ==========================================================
 
-.. raw::
+.. note::
 
     PBKDF2-params ::= SEQUENCE {
            salt CHOICE {

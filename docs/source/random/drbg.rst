@@ -16,7 +16,7 @@ Deterministic Random Bit Generators (DRBGs) 使用算法生成
 
 初始化，reseed，生成随机数
 
-.. raw::
+.. note::
 
     { internal state value, entropy input, additional input (optional) } => seed
 

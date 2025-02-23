@@ -2,7 +2,7 @@ hkdf
 ======================================
 
 
-.. raw::
+.. note::
 
    HKDF-Extract(salt, IKM) -> PRK
         salt 如果不指定，则默认为hash len的全0 string

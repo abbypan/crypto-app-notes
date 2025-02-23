@@ -46,7 +46,7 @@ K: 预先知道了对端的long-term public key
 
 例如 pattern = XK，表示 initiator 预先知道 responder 的long-term public key，initiator加密自身的long-term public key 给到 responder
 
-.. raw::
+.. note::
 
     KEM-ACCE: initiator -> responder: g^a, c0 = enc( key = KDF(g^aB), aad = g^a, plaintext = m0 )
     ORKE-ACCE: responder -> initiator: g^b, c1 = enc( key = KDF(g^aB, g^ab), aad = g^a || c0 || g^b, plaintext = m1)

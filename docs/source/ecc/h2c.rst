@@ -47,7 +47,7 @@ DST
 
 domain separation: 注意调用Hf时加上DST(doman seprartion tags)，避免不同来源因为相同的参数输入，获得相同的输出
 
-.. raw::
+.. note::
 
     suffix-only domain separation: Hso(msg) = H(msg || DST_ext)
     prefix-suffix domain separation: Hps(DST_ext || msg || I2OSP(0, 1))
@@ -55,7 +55,7 @@ domain separation: 注意调用Hf时加上DST(doman seprartion tags)，避免不
 
 XMD-HMAC domain separation:  
 
-.. raw::
+.. note::
 
         DST_key_preimage = "DERIVE-HMAC-KEY-" || DST_ext || I2OSP(0, 1)
         DST_key = H(DST_key_preimage)

@@ -18,7 +18,7 @@ calling: initiator提供 S/I/O, responder提供I/E。
 
 franking: 依赖双层hmac，NF由sender随M加密传输给receiver，TF由sender提交给server。KF属于server, RF由server计算，返回给sender&receiver。receiver举报时，向server提供M, NF, TF, RF, context。
 
-.. raw::
+.. note::
 
     TF = HMAC-SHA256(NF, M)
     RF = HMAC-SHA256(KF,TF || context)
@@ -32,7 +32,7 @@ restore
 
 AES-GCM-Extended: 32-byte key and a 28-byte nonce
 
-.. raw::
+.. note::
 
     subkey := hchacha20(nonce[0:16], key)
     subnonce := nonce[16:28]
@@ -54,7 +54,7 @@ epoch内由epochRootKey派生epochChainingKey, epochDistributionPreSharedKey，�
 
 root key还用于派生DataStorageKey, DeviceMacKey（key没区分device，仅mac区分device）。
 
-.. raw::
+.. note::
 
     epochDeviceMac := mac(epochDeviceMacKey, deviceKeyPub)
 

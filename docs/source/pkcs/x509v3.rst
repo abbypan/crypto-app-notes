@@ -12,7 +12,7 @@ Root Certificate, Intermediate certificate, End-entity certificate
 Certificate
 ----------------------------------------------------
 
-.. raw::
+.. note::
 
     Certificate  ::=  SEQUENCE  {
             tbsCertificate       TBSCertificate,
@@ -67,7 +67,7 @@ Certificate
 CRL
 ----------------------------------------------------
 
-.. raw::
+.. note::
 
     CertificateList  ::=  SEQUENCE  {
             tbsCertList          TBSCertList,

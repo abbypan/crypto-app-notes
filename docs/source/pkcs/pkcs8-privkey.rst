@@ -13,7 +13,7 @@ Asymmetric Key Package CMS Content Type
 
 版本，私钥算法，私钥，属性信息，……
 
-.. raw::
+.. note::
 
      AsymmetricKeyPackage ::= SEQUENCE SIZE (1..MAX) OF OneAsymmetricKey
 
@@ -51,7 +51,7 @@ Asymmetric Key Package CMS Content Type
 Encrypted Private Key Info
 ==========================================================
 
-.. raw::
+.. note::
 
      EncryptedPrivateKeyInfo ::= SEQUENCE {
        encryptionAlgorithm  EncryptionAlgorithmIdentifier,
@@ -72,7 +72,7 @@ The private key information, OneAsymmetricKey and PrivateKeyInfo, saved as a .p8
 
 中间是DER格式的EncryptedPrivateKeyInfo/PrivateKeyInfo的base64编码内容，上下加两行文本标识。
 
-.. raw::
+.. note::
 
     -----BEGIN ENCRYPTED PRIVATE KEY-----
     -----END ENCRYPTED PRIVATE KEY-----
