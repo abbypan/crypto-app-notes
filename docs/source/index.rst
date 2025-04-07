@@ -151,6 +151,7 @@
    kex/kyber-kex
    kex/pqxdh
    kex/pq3
+   kex/kem-ac
 
 
 .. toctree::
