@@ -163,6 +163,7 @@
    pqc/multivar-crypto
    pqc/lattice
    pqc/supersingular
+   pqc/hqc
 
 
 
