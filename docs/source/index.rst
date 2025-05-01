@@ -95,9 +95,11 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: ENC
+   :caption: KEM
 
-   enc/hpke
+   kem/ecies
+   kem/hpke
+   kem/xwing
 
 
 .. toctree::
@@ -106,7 +108,6 @@
 
     ecc/ecc
     ecc/ec-elgamal
-    ecc/ecies
     ecc/pairing
     ecc/ecc-attack
     ecc/secg
@@ -207,6 +208,8 @@
    :caption: PAKE
 
    pake/pake
+   pake/noic
+   pake/pake-combiners
 
 .. toctree::
    :maxdepth: 1
@@ -217,6 +220,7 @@
    pake/spake2
    pake/sespake
    pake/j-pake
+
 
 .. toctree::
    :maxdepth: 1
