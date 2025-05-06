@@ -8,6 +8,8 @@ doc
 
 `SEC 2: Recommended Elliptic Curve Domain Parameters <https://www.secg.org/SEC2-Ver-1.0.pdf>`_
 
+`ISO/IEC 18033-2: Information technology — Security techniques — Encryption algorithms — Part 2: Asymmetric Ciphers <https://shoup.net/iso/std4.pdf>`_
+
 pem
 ==========================================================
 
@@ -287,3 +289,4 @@ ECDSA, ECIES, ECDH, ECMQV, ECWKTS
 ECRNG => Dual_EC_DRBG  不推荐
 
 最后是相关信息的ASN1格式定义
+

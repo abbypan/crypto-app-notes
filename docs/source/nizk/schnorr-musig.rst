@@ -20,7 +20,7 @@ Schnorr signature
     &sG = R + cX\\
     \end{align*}
 
-
+`Schnorr Signature Aggregation <https://muens.io/schnorr-signature-aggregation/>`_
 
 MuSig
 ==========

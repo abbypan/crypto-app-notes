@@ -178,6 +178,7 @@
    app/zoom
    app/proto-impersonate
    app/e2ee-group-msg
+   app/drm
 
 
 .. toctree::
@@ -267,6 +268,13 @@
    :caption: IBE
 
    ibe/ibe
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Summary
+
+   summary/adv
 
 
 .. toctree::
