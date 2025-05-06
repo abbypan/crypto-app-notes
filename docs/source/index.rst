@@ -208,12 +208,6 @@
    :caption: PAKE
 
    pake/pake
-   pake/noic
-   pake/pake-combiners
-
-.. toctree::
-   :maxdepth: 1
-   :caption: balance PAKE
 
    pake/dragonfly
    pake/cpace
@@ -221,14 +215,13 @@
    pake/sespake
    pake/j-pake
 
-
-.. toctree::
-   :maxdepth: 1
-   :caption: augment PAKE
-
    pake/opaque
    pake/spake2plus
    pake/srp
+
+   pake/noic
+   pake/pake-combiners
+   pake/cpaceoquake
 
 
 .. toctree::
