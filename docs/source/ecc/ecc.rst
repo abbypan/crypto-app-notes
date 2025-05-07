@@ -146,3 +146,5 @@ RFC7748给出了X25519 (u, v)与Ed25519 (x, y)的转换公式。
 `Why EdDSA held up better than ECDSA against Minerva <https://blog.cr.yp.to/20191024-eddsa.html>`_
 
 `Ed25519 to Curve25519 <https://libsodium.gitbook.io/doc/advanced/ed25519-curve25519>`_
+
+`Implementing Curve25519/X25519: A Tutorial on Elliptic Curve Cryptography <https://martin.kleppmann.com/papers/curve25519.pdf>`_

@@ -6,7 +6,7 @@ overview
 
 `Hashing to Elliptic Curves <https://github.com/cfrg/draft-irtf-cfrg-hash-to-curve>`_
 
-`draft-irtf-cfrg-hash-to-curve <https://tools.ietf.org/html/draft-irtf-cfrg-hash-to-curve>`_
+`RFC9380 Hashing to Elliptic Curves <https://www.rfc-editor.org/rfc/rfc9380.html>`_
 
 pake，ibe, bls signature, verifiable random functions, verifiable random functions, oblivious pseudorandom functions等场景都需要把变长的输入映射为指定ec上的point。
 

@@ -39,3 +39,4 @@ forward-secrecy 的效果主要看delete old priv key & delet message encrypt ke
 - `Better Encrypted Group Chat <https://blog.trailofbits.com/2019/08/06/better-encrypted-group-chat/>`_
 - `Multicast Key Agreement, Revisited <https://www.youtube.com/watch?v=ySdNHvlDwFI>`_
 - `TCC 2022 session on Protocols Key Agreement and Commitments <https://www.youtube.com/watch?v=qXnELNvSDlM>`_
+- `mls <https://i.blackhat.com/USA-19/Wednesday/us-19-Robert-Messaging-Layer-Security-Towards-A-New-Era-Of-Secure-Group-Messaging.pdf>`_

@@ -4,13 +4,6 @@ HPKE
 overview
 ======================================
 
-`An Analysis of Hybrid Public Key Encryption <https://eprint.iacr.org/2020/243.pdf>`_
-
-`HPKE: Standardizing public-key encryption <https://blog.cloudflare.com/hybrid-public-key-encryption/>`_
-
-`RFC 9180 Hybrid Public Key Encryption <https://www.rfc-editor.org/rfc/rfc9180.html>`_
-
-`Deterministic Nonce-less Hybrid Public Key Encryption <https://datatracker.ietf.org/doc/draft-irtf-cfrg-dnhpke/>`_
 
 IND-CCA2 secure ( chosen ciphertext attack )
 
@@ -93,3 +86,12 @@ vulnerable to key compromise impersonation attack，主要问题是skR、psk的�
 
 psk_id, pkS都可能由于可标识，造成用户隐私泄漏。一种方法是使用base模式先加密一次`psk_id+pkS`获得(enc2, ciphertext2)，再正常加密message获得(enc, ciphertext)。最终传递(enc2, ciphertext2, enc, ciphertext)。。。
 
+
+doc
+====
+
+- `An Analysis of Hybrid Public Key Encryption <https://eprint.iacr.org/2020/243.pdf>`_
+- `HPKE: Standardizing public-key encryption <https://blog.cloudflare.com/hybrid-public-key-encryption/>`_
+- `RFC 9180 Hybrid Public Key Encryption <https://www.rfc-editor.org/rfc/rfc9180.html>`_
+- `Deterministic Nonce-less Hybrid Public Key Encryption <https://datatracker.ietf.org/doc/draft-irtf-cfrg-dnhpke/>`_
+- `ML-KEM for HPKE <https://datatracker.ietf.org/meeting/119/materials/slides-119-cfrg-ml-kem-for-hpke-03.pdf>`_

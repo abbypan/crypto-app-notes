@@ -41,3 +41,4 @@ doc
 - `Usage Limits on AEAD Algorithms <https://datatracker.ietf.org/doc/draft-irtf-cfrg-aead-limits/>`_
 - `Properties of AEAD algorithms <https://datatracker.ietf.org/doc/draft-irtf-cfrg-aead-properties/>`_
 - `Authenticated Encryption:Relations among notions and analysis of the generic composition paradigm <https://cseweb.ucsd.edu/~mihir/papers/oem.pdf>`_
+

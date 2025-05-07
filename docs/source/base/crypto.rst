@@ -21,7 +21,7 @@ course
 - `Advanced Tools from Modern Cryptography <https://www.cse.iitb.ac.in/~mp/teach/advcrypto/s22/>`_
 - `Introduction to Cryptography <https://crypto.stanford.edu/~dabo/cs255/>`_
 - `Online Cryptography Course <https://crypto.stanford.edu/~dabo/courses/OnlineCrypto/>`_
-- `Introduction to Modern Cryptography (2nd edition) <https://www.cs.umd.edu/~jkatz/imc.html>`_
+- `Introduction to Modern Cryptography <https://www.cs.umd.edu/~jkatz/imc.html>`_
 - `Index of /Courses/c653/lectures/PDF <http://gauss.ececs.uc.edu/Courses/c653/lectures/PDF/?C=M;O=A>`_
 - `CS 5430 System Security  <https://www.cs.cornell.edu/courses/cs5430/2017sp/>`_
 - `Summer School on real-world crypto and privacy <https://summerschool-croatia.cs.ru.nl/2018/program.shtml>`_
