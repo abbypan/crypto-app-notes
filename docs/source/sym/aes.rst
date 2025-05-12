@@ -1,17 +1,6 @@
 AES
 #######
 
-doc
-==========================================================
-
-- `RFC5084 Using AES-CCM and AES-GCM Authenticated Encryption in the Cryptographic Message Syntax (CMS) <https://tools.ietf.org/html/rfc5084>`_
-- `RFC5116 Authenticated Encryption <https://tools.ietf.org/html/rfc5116>`_
-- `Basic question regarding OpenSSL and AES-GCM <https://security.stackexchange.com/questions/128883/basic-question-regarding-openssl-and-aes-gcm>`_
-- `How to choose between AES-CCM and AES-GCM for storage volume encryption <https://crypto.stackexchange.com/questions/6842/how-to-choose-between-aes-ccm-and-aes-gcm-for-storage-volume-encryption>`_
-- `Evaluation of Some BlockcipherModes of Operation <https://web.cs.ucdavis.edu/~rogaway/papers/modes.pdf>`_
-- `Properties of AEAD algorithms <https://datatracker.ietf.org/doc/draft-irtf-cfrg-aead-properties/>`_
-- `aes fips 197 <http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf>`_
-
 block size, key length
 ==========================================================
 
@@ -40,13 +29,6 @@ ccm(ctr with cbc-mac) : x + 16 (authtag)
 padding
 ==========================================================
 
-`EVP_EncryptInit <https://www.openssl.org/docs/manmaster/man3/EVP_EncryptInit.html>`_
-
-`What is the difference between PKCS#5 padding and PKCS#7 padding <https://crypto.stackexchange.com/questions/9043/what-is-the-difference-between-pkcs5-padding-and-pkcs7-padding>`_
-
-`Padding (cryptography) <https://en.wikipedia.org/wiki/Padding_(cryptography)>`_
-
-`What are the relative merits of padding algorithms pkcs7, iso7816, and x923? <https://crypto.stackexchange.com/questions/31372/what-are-the-relative-merits-of-padding-algorithms-pkcs7-iso7816-and-x923>`_
 
 默认使用 PKCS#7 padding。
 
@@ -65,7 +47,6 @@ ISO/IEC 7816-4 是以80标识padding，后面以全0做padding content。
 adiantum 
 ==========================================================
 
-`Adiantum and HPolyC <https://github.com/google/adiantum>`_
 
 AES-XTS: 没硬件加速会比较慢；明文单bit变化，密文最多变化16bytes。
 
@@ -83,7 +64,6 @@ ocb
 `ocb <https://web.cs.ucdavis.edu/~rogaway/ocb/ocb-faq.htm>`_
 
 `rfc7253: The OCB Authenticated-Encryption Algorithm <https://datatracker.ietf.org/doc/html/rfc7253>`_
-
 
 
 aegis  
@@ -111,3 +91,22 @@ nonce per-session 32bits, IV per-packet 64bits, ONE=0x01 32bits
     END
 
     CT[n] := PT[n] XOR TRUNC(AES(CTRBLK))
+
+doc
+==========================================================
+
+- `RFC5084 Using AES-CCM and AES-GCM Authenticated Encryption in the Cryptographic Message Syntax (CMS) <https://tools.ietf.org/html/rfc5084>`_
+- `RFC5116 Authenticated Encryption <https://tools.ietf.org/html/rfc5116>`_
+- `Basic question regarding OpenSSL and AES-GCM <https://security.stackexchange.com/questions/128883/basic-question-regarding-openssl-and-aes-gcm>`_
+- `How to choose between AES-CCM and AES-GCM for storage volume encryption <https://crypto.stackexchange.com/questions/6842/how-to-choose-between-aes-ccm-and-aes-gcm-for-storage-volume-encryption>`_
+- `Evaluation of Some BlockcipherModes of Operation <https://web.cs.ucdavis.edu/~rogaway/papers/modes.pdf>`_
+- `Properties of AEAD algorithms <https://datatracker.ietf.org/doc/draft-irtf-cfrg-aead-properties/>`_
+- `aes fips 197 <http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf>`_
+- `Comparison of Symmetric Encryption Methods <https://soatok.blog/2020/07/12/comparison-of-symmetric-encryption-methods/>`_
+- `EVP_EncryptInit <https://www.openssl.org/docs/manmaster/man3/EVP_EncryptInit.html>`_
+- `What is the difference between PKCS#5 padding and PKCS#7 padding <https://crypto.stackexchange.com/questions/9043/what-is-the-difference-between-pkcs5-padding-and-pkcs7-padding>`_
+- `Padding (cryptography) <https://en.wikipedia.org/wiki/Padding_(cryptography)>`_
+- `What are the relative merits of padding algorithms pkcs7, iso7816, and x923? <https://crypto.stackexchange.com/questions/31372/what-are-the-relative-merits-of-padding-algorithms-pkcs7-iso7816-and-x923>`_
+- `Adiantum and HPolyC <https://github.com/google/adiantum>`_
+- `Cryptographic Wear-Out for Symmetric Encryption <https://soatok.blog/2020/12/24/cryptographic-wear-out-for-symmetric-encryption/>`_
+

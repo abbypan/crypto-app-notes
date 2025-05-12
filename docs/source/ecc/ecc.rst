@@ -133,7 +133,6 @@ Ed25519针对fixed-base & double-base计算做了优化，其实就是twisted Ed
 RFC7748给出了X25519 (u, v)与Ed25519 (x, y)的转换公式。
 
 `How do Ed25519 keys work? <https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/>`_
-，图画的挺好。
 
 `Using Ed25519 signing keys for encryption <https://blog.filippo.io/using-ed25519-keys-for-encryption/>`_
 ，加密时直接用公式把公钥的point中的y转换为u，解密时从ed25519的key做hash提取前32byte的私钥。
@@ -148,3 +147,5 @@ RFC7748给出了X25519 (u, v)与Ed25519 (x, y)的转换公式。
 `Ed25519 to Curve25519 <https://libsodium.gitbook.io/doc/advanced/ed25519-curve25519>`_
 
 `Implementing Curve25519/X25519: A Tutorial on Elliptic Curve Cryptography <https://martin.kleppmann.com/papers/curve25519.pdf>`_
+
+`Defeating Ed25519 and EdDSA using a fault attack <https://romailler.ch/project/eddsa-fault/>`_

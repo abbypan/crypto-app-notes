@@ -91,6 +91,7 @@
    sig/bls-sig
    sig/bbs-sig
    sig/frost
+   sig/schnorr-sig
 
 
 .. toctree::
@@ -265,9 +266,10 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: IBE
+   :caption: FE
 
-   ibe/ibe
+   fe/ibe
+   fe/abe
 
 
 .. toctree::

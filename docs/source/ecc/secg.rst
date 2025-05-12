@@ -10,6 +10,8 @@ doc
 
 `ISO/IEC 18033-2: Information technology — Security techniques — Encryption algorithms — Part 2: Asymmetric Ciphers <https://shoup.net/iso/std4.pdf>`_
 
+`RFC6090 Fundamental Elliptic Curve Cryptography Algorithms <https://datatracker.ietf.org/doc/html/rfc6090>`_
+
 pem
 ==========================================================
 
