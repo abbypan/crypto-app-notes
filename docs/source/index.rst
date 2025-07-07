@@ -218,6 +218,7 @@
    pake/cpace
    pake/spake2
    pake/sespake
+   pake/speke
    pake/j-pake
 
    pake/opaque
