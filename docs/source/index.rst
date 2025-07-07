@@ -143,9 +143,10 @@
    :maxdepth: 1
    :caption: Key Exchange
 
-   kex/key-estab
+   kex/kex
+   kex/sigma
    kex/noise
-   kex/ake
+   kex/sts
    kex/ipsec-ike
    kex/x3dh
    kex/double-ratchet
@@ -154,6 +155,8 @@
    kex/pqxdh
    kex/pq3
    kex/kem-ac
+   kex/naxos
+   kex/iso-ke
 
 
 .. toctree::
