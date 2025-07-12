@@ -72,8 +72,11 @@ curve addition
 .. math::
 
   x = X/Z
+
   y = Y/Z
+
   coordinates  (X, Y, Z, T) 
+
 
 fast decompression
 ======================================
