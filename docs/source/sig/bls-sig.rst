@@ -130,7 +130,7 @@ BLS Multi-Signatures With Public-Key Aggregation
 
 增加一个H映射： :math:`(t_1, ..., t_n) = H1(PK_1, ..., PK_n)`
 
-.. math::
+.. note::
 
     PK_i~ = PK_i ^ t_i
 
