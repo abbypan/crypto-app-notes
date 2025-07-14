@@ -53,9 +53,9 @@ rights
 
     H_i <- NIKE.sessionKey(s, X_i)  
 
-    pk_i' <- (X_i, pk_i)
+    pk'_i <- (X_i, pk_i)
 
-    sk_i' <- (x_i, sk_i)
+    sk'_i <- (x_i, sk_i)
 
 
 用户的secret key集合（与rights关联）： UP
@@ -64,9 +64,9 @@ global public key (MPK), master secret key (MSK)
 
 .. math::
 
-    MPK <- (tpk, {pk_i'}_i)
+    MPK <- (tpk, {pk'_i}_i)
 
-    MSK <- (tsk, {sk_i'}_i, UP)
+    MSK <- (tsk, {sk'_i}_i, UP)
 
 
 HTKEMAC.KeyGen(MSK, U, Y) -> (USK, MSK', tsk')
@@ -98,5 +98,70 @@ HTKEMAC.KeyGen(MSK, U, Y) -> (USK, MSK', tsk')
 
 HTKEMAC.Enc(MPK, X) →  (C, K)
 ---------------------------------
+
+指定的rights集合为X
+
+随机生成S, 计算 
+
+.. math::
+
+    r <- G(S)
+
+    c_1 <- r * P_1
+
+    c_2 <- r * P_2
+
+    c <- (c_1, c_2)
+
+
+对X中的每个i，计算
+
+.. math::
+
+    K_i <- NIKE.SessionKey(r, H_i)
+
+    (E_i, K'_i) <- KEM.ENC(pk_i)
+
+    F_i <- S xor H(K_i, K'_i, c, {E_l}_{l \in X})
+
+
+最终
+
+.. math::
+
+    (K, V) <- J(S, c, {E_i, F_i}_{i \in X})
+
+    C <- (c, {E_i, F_i}_{i \in X}, V)
+
+
+HTKEMAC.Dec(USK, C) → K
+------------------------------
+
+对X中的每个i，对于Y中的每个j，计算
+
+.. math::
+
+    K'_{i,j} <- KEM.Dec(sk_j, E_i)
+
+    K_j <- NIKE. SessionKey(x_j, \alpha * c_1 + \beta * c_2)
+
+    S_{i, j} <- F_i xor H(K_j, K'_{i, j}, c, {E_l}_{l \in X})
+
+    r' <- G(S_{i, j})
+
+    (U'_{i, j}, V'_{i, j}) <- J(S_{i, j}, c, {E_i, F_i}_{i \in X})
+
+    检查 c 是否与 (r' * P_1, r' * P_2) 相符
+
+    检查 V'_{i, j} 是否与 V 相符
+
+    如果两者相符，则返回 K <- U'_{i, j}；否则，继续尝试下一个 { i, j }
+
+
+Access structure
+-------------------
+
+
+
 
 
