@@ -161,7 +161,24 @@ HTKEMAC.Dec(USK, C) → K
 Access structure
 -------------------
 
+.. math::
+
+    semantic space: sem(\Omega, r) 相当于 r 的展开
+
+    complementary space: comp(\Omega, r) = { P_{r'}, r' \le r } + (\Omega \  sem(\Omega, r))  相当于 小于等于r的rights 结合 非sem(\Omega, r)的集合
+
+    示例 CTR::FR && SEC::MED，则
+
+    r = (2, 0, 2)
+
+    { P_{r'}, r' \le r } = { (2, 0, 1), (2, 0, 2) }
+
+    (\Omega \  sem(\Omega, r)) = < (0, 1, 0) >
+
+    comp(\Omega, r) = { (2, 0, 1), (2, 1, 1), (2,2, 1), (2, 0, 2), (2, 1, 2), (2, 2, 2) }
 
 
+对于每个encapsulation，其access policy所关联的rights个数，即为其覆盖的clauses数
 
+每个user secret key所关联的rights数，即该user所拥有的rights对应的comp空间
 
