@@ -5,9 +5,13 @@ imessage pq3
 
 `Advancing iMessage security: iMessage Contact Key Verification <https://security.apple.com/blog/imessage-contact-key-verification>`_
 
+`A Formal Analysis of Apple’s iMessage PQ3 Protocol <https://eprint.iacr.org/2024/1395.pdf>`_
+
 https://security.apple.com/assets/files/A_Formal_Analysis_of_the_iMessage_PQ3_Messaging_Protocol_Basin_et_al.pdf
 
 https://security.apple.com/assets/files/Security_analysis_of_the_iMessage_PQ3_protocol_Stebila.pdf
+
+
 
 用的lattice kem，kyber-1024/768。Pre-key是1024，rekey是768。
 

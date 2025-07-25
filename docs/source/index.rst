@@ -153,10 +153,10 @@
    kex/mls
    kex/kyber-kex
    kex/pqxdh
-   kex/pq3
    kex/kem-ac
    kex/naxos
    kex/iso-ke
+   kex/sas
 
 
 .. toctree::
@@ -191,7 +191,8 @@
 
    apple/continuity
    apple/hap
-   appple/airdrop  
+   apple/airdrop  
+   apple/imessage-pq3
 
 
 .. toctree::
@@ -235,6 +236,7 @@
    :caption: SMC
 
    smc/vdaf
+
 
 .. toctree::
    :maxdepth: 1
