@@ -29,6 +29,7 @@ CoreSign
 .. math::
 
     Q = hash_to_point(message)
+
     R = SK * Q
 
 CoreVerify
@@ -39,11 +40,15 @@ CoreVerify
     result = CoreVerify(PK, message, signature)
 
     检查signature对应的R point的valid、以及subgroup
+
     检查PK的KeyValidate
 
     Q = hash_to_point(message)
+
     C1 = pairing(Q, PK)
+
     C2 = pairing(R, P)
+
     If C1 == C2, return VALID, else return INVALID
 
     C2 = pairing(SK * Q, P) = pairing(Q, SK * P) = pairing(Q, PK) = C1
@@ -69,8 +74,11 @@ CoreAggregateVerify
 .. math::
 
     C_i = pairing(hash_to_point(message_i), PK_i)
+
     C1 = C_1 * ... * C_n
+
     C2 = pairing(R, P)
+
     If C1 == C2, return VALID, else return INVALID
 
 显然，N+1次pairing
@@ -107,7 +115,9 @@ size/cost都要增加
 .. math::
 
     R = signature_1 + ... + signature_n
+
     PK = PK_1 + ... + PK_n
+    
     CoreVerify(PK, message, signature)
 
 
@@ -120,7 +130,10 @@ BLS Multi-Signatures With Public-Key Aggregation
 
 增加一个H映射： :math:`(t_1, ..., t_n) = H1(PK_1, ..., PK_n)`
 
+.. note::
+
     PK_i~ = PK_i ^ t_i
+
     signature_i~ = signature_i ^ t_i
 
 当message完全相同时，同样能优化为2次pairing

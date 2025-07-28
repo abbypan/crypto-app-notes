@@ -40,10 +40,15 @@ XEdDSA
 .. note::
 
     p <- H'(sk, message, nonce) //HE
+
     (a, St) <- ([p]G, p)  //Com
+
     e <- H(a, message, pk)  //H
+
     z <- p + e * sk mod q  //Resp
+
     sig <- (a, z) //CSF
+
 
 canonical identification protocol
 ==========================================================
@@ -61,10 +66,15 @@ EC-Schnorr signing
 .. note::
 
     p <- random
+
     (a, St) <- ([p]G, p)  //Com
+
     e <- H(a, message)  //H
+
     z <- p + e * sk mod q  //Resp
+
     sig <- (e, z) //CSF
+
 
 EdDSA signing
 ==========================================================
@@ -72,9 +82,16 @@ EdDSA signing
 .. note::
 
     (sk, K) <- H''(k)
+
     pk <- [sk]G
+
     p <- H'(K, m)
+
     (a, St) <- ([p]G, p)  //Com
+
     e <- H(a, message, pk)  //H
+
     z <- p + e * sk mod q  //Resp
+
     sig <- (a, z) //CSF
+

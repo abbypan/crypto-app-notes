@@ -19,8 +19,11 @@ distributing the private share (i, f (i)) to each participant Pi
 .. math::
 
     C = < φ_0, . . . , φ_{t−1} >
+
     φ_0 = g^s
+
     φ_j = g^{a_j}
+
 
 显然，可以用Lagrange校验
 
@@ -44,8 +47,11 @@ Each :math:`P_i` securely sends to each other participant :math:`P_l` a secret s
 .. math::
 
     s_i = ∑ f_l(i), 1 ≤ l ≤ n
+
     Y_i = g^{si}
+
     Y = ∏ φ_{j0}, 1 ≤ j ≤ n
+
 
 其他 :math:`P_j` 可以校验 :math:`Y_i = ∏ ∏ φ_{lk}^(i^k mod q), 0 ≤ k ≤ t-1; 1 ≤ l ≤ n`
 
@@ -75,12 +81,15 @@ SA为此次Signing选择 :math:`α : t ≤ α ≤ n` participants， the next av
     k_i = d_i + e_i · ρ_i
 
     R_i = D_i · E_i^(ρ_i)
+
     z_i = d_i + (e_i · ρ_i) + λ_i · s_i · c
 
     verify g^(z_i) = R_i · Y_i^(c·λ_i)
 
     R = ∏ R_i, i∈S 
+
     z = ∑ z_i, i∈S 
+
     σ = (R, z)
 
     verify R = g^z · Y^(-c)
@@ -124,9 +133,11 @@ two round
 .. math::
 
     hiding_nonce: d_i
+
     hiding_nonce_commitment: D_i
 
     binding_nonce: e_i
+
     binding_nonce_commitment_i: E_i
 
     binding_factor: ρ_i
