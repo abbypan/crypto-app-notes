@@ -101,6 +101,7 @@
    kem/ecies
    kem/hpke
    kem/xwing
+   kem/kem-ac
 
 
 .. toctree::
@@ -153,7 +154,6 @@
    kex/mls
    kex/kyber-kex
    kex/pqxdh
-   kex/kem-ac
    kex/naxos
    kex/iso-ke
    kex/sas
