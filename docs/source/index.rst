@@ -157,6 +157,7 @@
    kex/naxos
    kex/iso-ke
    kex/sas
+   kex/pkex
 
 
 .. toctree::
@@ -277,12 +278,19 @@
    fe/ibe
    fe/abe
 
+ 
+.. toctree::
+   :maxdepth: 1
+   :caption: se
+
+   se/pkes
+
 
 .. toctree::
    :maxdepth: 1
-   :caption: Summary
+   :caption: course
 
-   summary/adv
+   course/adv
 
 
 .. toctree::

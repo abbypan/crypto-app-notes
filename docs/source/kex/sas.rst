@@ -21,7 +21,7 @@ f: enc, h: hmac
 
         Bob:  c == hash(d) ? ,  k = f(r_a, r_b), check_b = h(m_a || m_b, k) 
 
-        Alice & Bob: check_a == check_b ?, accept m_a || m_b
+        Alice <-> Bob: check_a == check_b ?, accept m_a || m_b
 
 
 doc
