@@ -194,6 +194,7 @@
    apple/hap
    apple/airdrop  
    apple/imessage-pq3
+   apple/icloud-private-relay
 
 
 .. toctree::
