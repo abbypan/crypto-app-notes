@@ -38,6 +38,7 @@
    sym/key-wrap
    sym/siv
    sym/xts
+   sym/xcb
    sym/ocb
    sym/cbc-padding-oracle-attack
    sym/karn
