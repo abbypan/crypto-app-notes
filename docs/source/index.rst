@@ -172,6 +172,7 @@
    pqc/lattice
    pqc/supersingular
    pqc/hqc
+   pqc/hawk
 
 
 
@@ -209,6 +210,7 @@
    privacy/differential-privacy
    privacy/privacy-pass
    privacy/daa
+   privacy/biohash
 
 
 
@@ -289,12 +291,6 @@
    se/pkes
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: course
-
-   course/adv
-
 
 .. toctree::
    :maxdepth: 1
@@ -311,5 +307,6 @@
    attack/ssh-terrapin
    attack/perl-hash-att
    attack/dh-attack
+   attack/weak-keys
 
 
