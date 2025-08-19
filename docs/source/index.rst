@@ -47,6 +47,7 @@
    :caption: LWC
 
    lwc/lwc
+   lwc/ascon
 
 
 .. toctree::
