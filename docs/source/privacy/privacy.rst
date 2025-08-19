@@ -30,3 +30,8 @@ real time bidding
 ==========================================================
 
 `Web Privacy Measurement in Real-Time Bidding Systems. A Graph-Based Approach to RTB System Classification <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3319284>`_
+
+privacy list
+==================
+
+https://dataprivacylab.org/projects/identifiability/paper1.pdf

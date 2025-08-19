@@ -5,6 +5,7 @@ doc
 ==========================================================
 
 - `Applied Cryptography Group <https://crypto.stanford.edu/>`_
+- `Advanced Cryptography - NCSC.GOV.UK <https://www.ncsc.gov.uk/pdfs/whitepaper/advanced-cryptography.pdf>`_
 - `Developing Criteria for the Single-Device Trackof the Threshold Cryptography Project at NIST <https://csrc.nist.gov/CSRC/media/Presentations/developing-criteria-for-the-single-device-track/images-media/threshold-single-device-talk-NIST-20200707.pdf>`_
 - `ByteTerrace Help Page <https://byteterrace.com/api/help/index.html>`_
 - `PBE Encryption Decryption <https://8gwifi.org/pbe.jsp>`_

@@ -9,6 +9,14 @@ BLS12-381
 
 - `Pairing over BLS12-381, Part 1: Fields <https://www.nccgroup.com/us/research-blog/pairing-over-bls12-381-part-1-fields/>`_
 - `Pairing over BLS12-381, Part 2: Curves <https://www.nccgroup.com/us/research-blog/pairing-over-bls12-381-part-2-curves/>`_
+
+degree 12
+
+F_p 381 bits，p前面补0可凑满 384 bits
+
+about 110 bits strength
+
+order 256 bits
   
 amicable pair
 ==========================================================

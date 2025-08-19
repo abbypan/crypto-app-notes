@@ -7,6 +7,10 @@ SHA-3 Derived Functions
 
 注意security strength同时在函数名里体现，例如cSHAKE128, cSHAKE256。
 
+sha3 fixed-output-length; sha3-x, x/2 bits 强度， x bits的output 
+
+shake variable-output-length; shake-x, x bits 强度，至少2x bits的output
+
 cSHAKE
 ========
 

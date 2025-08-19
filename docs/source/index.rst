@@ -38,6 +38,8 @@
    sym/key-wrap
    sym/siv
    sym/xts
+   sym/xcb
+   sym/ocb
    sym/cbc-padding-oracle-attack
    sym/karn
 
@@ -171,6 +173,7 @@
    pqc/lattice
    pqc/supersingular
    pqc/hqc
+   pqc/hawk
 
 
 
@@ -195,6 +198,7 @@
    apple/hap
    apple/airdrop  
    apple/imessage-pq3
+   apple/icloud-private-relay
 
 
 .. toctree::
@@ -207,6 +211,7 @@
    privacy/differential-privacy
    privacy/privacy-pass
    privacy/daa
+   privacy/biohash
 
 
 
@@ -287,12 +292,6 @@
    se/pkes
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: course
-
-   course/adv
-
 
 .. toctree::
    :maxdepth: 1
@@ -309,5 +308,6 @@
    attack/ssh-terrapin
    attack/perl-hash-att
    attack/dh-attack
+   attack/weak-keys
 
 
