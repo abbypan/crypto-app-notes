@@ -5,20 +5,20 @@ RFC2104
 
     authentication key K
 
-    ipad = the byte 0x36 repeated B times
+    ipad - the byte 0x36 repeated B times
 
-    opad = the byte 0x5C repeated B times.
+    opad - the byte 0x5C repeated B times.
 
 To compute HMAC over the data "text" we perform
 
-    HMAC = H(K XOR opad, H(K XOR ipad, text))
+    HMAC - H(K XOR opad, H(K XOR ipad, text))
 
 也就是用K对text做处理
 
 H函数可选SHA1, MD5, RIPEMD, 等等
 
 HMAC-SHA-256
-==========================================================
+----------------------------------------------------------
 
 RFC4868
 
@@ -41,7 +41,7 @@ RFC4868
 Block size可以padding对齐，Output length长度固定，Authenticator length取Output的前一半
 
 doc
-===========
+-----------
 
 NIST 800-38
 
