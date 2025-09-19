@@ -95,6 +95,7 @@
    sig/bbs-sig
    sig/frost
    sig/schnorr-sig
+   sig/cl-sig
 
 
 .. toctree::
@@ -212,6 +213,8 @@
    privacy/privacy-pass
    privacy/daa
    privacy/biohash
+   privacy/crescent-credentials
+
 
 
 

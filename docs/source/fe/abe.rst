@@ -1,6 +1,17 @@
 abe
 =========
 
+kp-abe & cp-abe
+-------------------
+
+kp-abe:
+- private key 内嵌 access policy (AND / OR 等attribute组合判定)
+- ciphertext 内嵌 attributes
+
+cp-abe: 
+- private key 内嵌 attributes 
+- ciphertext 内嵌 access policy (AND / OR 等attribute组合判定)
+
 
 cp-abe
 ------------
