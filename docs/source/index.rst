@@ -61,6 +61,13 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: secret
+
+   secret/pvss
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Hash
 
    hash/sha3-df
