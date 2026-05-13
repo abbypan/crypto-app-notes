@@ -16,3 +16,10 @@ PQKEM encapsulate symmetric secret (ss) 用于 session key 的派生。
 
 PQSPK, PQOPK 仍由 IK sign，没上PQ SIG。
 
+
+sntrup761x25519-sha512
+========================
+
+RFC9941
+
+SHA-512(K_sntrup || K_x25519)
