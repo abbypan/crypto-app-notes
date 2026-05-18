@@ -23,7 +23,6 @@
    random/dual-ec-drbg
    random/random-improve
    random/vrf
-   random/oprfs
 
 
 .. toctree::
@@ -221,6 +220,7 @@
    privacy/daa
    privacy/biohash
    privacy/crescent-credentials
+   privacy/oprfs
 
 
 

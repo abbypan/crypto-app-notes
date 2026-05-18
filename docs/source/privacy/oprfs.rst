@@ -34,7 +34,7 @@ VerifyProof 跟ecdsa_verify比较像，调用ComputeComposites计算M/Z，使用
 OPRF Protocol
 ==========================================================
 
-.. math::
+.. code-block::
 
     Server的公私钥对为(skS, pkS), 其中pkS = Base * skS，Base为Group G的生成元
 
@@ -55,7 +55,7 @@ OPRF Protocol
 VOPRF Protocol
 ==========================================================
 
-.. math::
+.. code-block::
 
     Client:
        //blind, blindElement 计算同OPRF
@@ -74,7 +74,7 @@ VOPRF Protocol
 POPRF Protocol
 ==========================================================
     
-.. math::
+.. code-block::
 
     Client: 
        //基于info派生m，计算T = Base * m，tweakedKey = T + pkS
