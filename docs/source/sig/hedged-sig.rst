@@ -37,7 +37,7 @@ CSF (canonical serialization function): 输出最终的签名结构体sig
 XEdDSA
 ----------------------------------------------------
 
-.. note::
+.. code-block::
 
     p <- H'(sk, message, nonce) //HE
 
@@ -63,7 +63,7 @@ ID = (IGen, Com, Resp, V)
 EC-Schnorr signing
 ==========================================================
 
-.. note::
+.. code-block::
 
     p <- random
 
@@ -79,7 +79,7 @@ EC-Schnorr signing
 EdDSA signing
 ==========================================================
 
-.. note::
+.. code-block::
 
     (sk, K) <- H''(k)
 

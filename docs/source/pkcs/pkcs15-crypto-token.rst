@@ -52,7 +52,7 @@ CommonKeyAttributes
 
 有两个关键的KeyAttributes
 
-.. note::
+.. code-block::
    
     KeyUsageFlags ::= BIT STRING {
           encrypt                       (0),

@@ -1,7 +1,7 @@
 密码应用笔记
 ===================
 
-.. note::
+.. code-block::
 
    https://github.com/abbypan/crypto-app-notes
 

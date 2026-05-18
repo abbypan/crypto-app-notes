@@ -101,7 +101,7 @@ pair setup
 
 以ios device为例，
 
-.. note::
+.. code-block::
 
     iOSDeviceX = hkdf-sha-512(input key = S, salt = "pairing-setup-controller-sign-salt", info = "pair-setup-controller-sign-info", L = 32)
     iOSDeviceInfo = iOSDeviceX || iOSDevicePairingID (配对标识) || iOSDeviceLTPK (长期公钥)
@@ -116,7 +116,7 @@ pair verify
 
 采用Station-to-Staion(STS)协议，进行双向认证。
 
-.. note::
+.. code-block::
 
     ios device -> accessory :  ios device's x25519 temp public key
 
@@ -209,7 +209,7 @@ homekit data stream (HDS)
 
 基于当前session的shared secret (S), 派生数据传输的encryption key：
 
-.. note::
+.. code-block::
 
         AccessoryToControllerBulkTransferEncryptionKey = hkdf-sha-512(input key = S, salt = <controllerKeySalt><accessoryKeySalt>, info = "HDS-read-encryption-key", L = 32)
         ControllerToAccessoryBulkTransferEncryptionKey = hkdf-sha-512(input key = S, salt = <controllerKeySalt><accessoryKeySalt>, info = "HDS-write-encryption-key", L = 32)
@@ -234,7 +234,7 @@ pair-resume procedure
 
 controller -> accessory: 
 
-.. note::
+.. code-block::
 
     随机生成controller's x25519 temp public key
     RequestKey = hkdf-sha-512(input key = S, salt =<Controller's x25519 temp public key><session ID>, info = "pair-resume-request-info", L = 32)
@@ -243,7 +243,7 @@ controller -> accessory:
 
 accessory -> controller: 
 
-.. note::
+.. code-block::
 
     accessory根据session ID定位shared secret。
     如果shared secret已过期，则触发pair verify(直接使用当前收到的controller's x25519 temp public key，节省RTT)，结束resume procedure。
@@ -254,7 +254,7 @@ accessory -> controller:
 
 双方更新shared secret:
 
-.. note::
+.. code-block::
 
     new shared secret = hkdf-sha-512(input key = S, salt =<Controller's x25519 temp public key><new session ID>, info = "pair-resume-shared-secret-info", L = 32)
 

@@ -21,7 +21,9 @@ Preliminaries
 选取了质数阶的群。
 
 函数定义: k*A = B, k*C = D
+
 - 证明方： proof = (c, s) = GenerateProof(k, A, B, C, D),  其中会调用子函数 (M, Z) = ComputeCompositesFast(k, B, [C], [D]), 注意Z = k*M
+
 - 校验方:  flag = VerifyProof(A, B, C, D, proof)，其中会调用子函数 (M, Z) = ComputeComposites(B, [C], [D])，注意由于没有k，无法直接通过Z = k*M计算Z，所以会多做加法和乘法
 
 GenerateProof 跟ecdsa_sign比较像，调用ComputeCompositesFast计算M/Z，随机数r还要跟Base/M算点乘得到t2/t3

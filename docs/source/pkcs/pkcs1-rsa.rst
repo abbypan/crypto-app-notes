@@ -65,7 +65,7 @@ ASN.1 Syntax
 
 RSA Key Representation 各项参数说明，n/p/q/e/d/...
 
-.. note::
+.. code-block::
 
     RSAPublicKey ::= SEQUENCE {
                 modulus           INTEGER,  -- n

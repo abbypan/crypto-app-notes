@@ -18,7 +18,7 @@ General syntax
 ContentInfo
 ----------------------------------------------------
 
-.. note::
+.. code-block::
 
     ContentInfo ::= SEQUENCE {
          contentType ContentType,
@@ -34,7 +34,7 @@ ContentType: data, signedData, envelopedData, signedAndEnvelopedData, digestedDa
 SignedData
 ----------------------------------------------------
 
-.. note::
+.. code-block::
 
     SignedData ::= SEQUENCE {
          version Version,
@@ -50,7 +50,7 @@ SignedData
 SignerInfo
 ----------------------------------------------------
 
-.. note::
+.. code-block::
 
     SignerInfo ::= SEQUENCE {
          version Version,
@@ -67,7 +67,7 @@ SignerInfo
 DigestInfo
 ----------------------------------------------------
 
-.. note::
+.. code-block::
 
     DigestInfo ::= SEQUENCE {
          digestAlgorithm DigestAlgorithmIdentifier,
@@ -79,7 +79,7 @@ Enveloped-data content type
 EnvelopedData
 ----------------------------------------------------
 
-.. note::
+.. code-block::
 
     EnvelopedData ::= SEQUENCE {
          version Version,
@@ -102,7 +102,7 @@ RecipientInfo
 
 encryptedKey 是用recipient's public key加密content-encryption key的结果，确保只有recipient能解密获取content-encryption key
 
-.. note::
+.. code-block::
 
     RecipientInfo ::= SEQUENCE {
          version Version,
@@ -119,7 +119,7 @@ PKCS#7 PADDING
 
 假设内容长度为l，要求k字节对齐，则：
 
-.. note::
+.. code-block::
 
        01 -- if l mod k = k-1
        02 02 -- if l mod k = k-2
@@ -134,7 +134,7 @@ Signed-and-enveloped-data content type
 SignedAndEnvelopedData
 ----------------------------------------------------
 
-.. note::
+.. code-block::
 
     SignedAndEnvelopedData ::= SEQUENCE {
          version Version,
@@ -156,7 +156,7 @@ DigestedData
 
 ContentInfo里的content是被计算摘要的content
 
-.. note::
+.. code-block::
 
     DigestedData ::= SEQUENCE {
          version Version,
