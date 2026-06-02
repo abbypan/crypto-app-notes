@@ -1,0 +1,10 @@
+.mjx-chtml[display="true"], 
+.mjx-container[display="true"] {
+	text-align: left !important;
+	padding-left: 2em !important; 
+}
+
+mjx-container[display="true"] > svg {
+	margin-left: 0 !important;
+	margin-right: auto !important;
+}
