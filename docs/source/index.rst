@@ -219,8 +219,9 @@
    privacy/privacy-pass
    privacy/daa
    privacy/biohash
-   privacy/crescent-credentials
    privacy/oprfs
+   privacy/longfellow
+   privacy/crescent-credentials
 
 
 
