@@ -38,13 +38,13 @@ Sign
 
 .. math::
 
-    (Q_1, Q_2, H_1, ..., H_L) = create_generators(L+2)
+    (Q_1, Q_2, H_1, ..., H_L) = createGenerators(L+2)
 
 基于PK、generators、header计算domain，一个hash2scalar映射。
 
 .. math::
 
-      domain = calculate_domain(PK, Q_1, Q_2, (H_1, ..., H_L), header)
+      domain = calculateDomain(PK, Q_1, Q_2, (H_1, ..., H_L), header)
 
 基于SK、domain, msg1 ... msgL 计算 (e, s)，一个expand_message，两个hash2scalar映射。
 
@@ -52,11 +52,11 @@ Sign
 
     e_s_octs = serialize((SK, domain, msg_1, ..., msg_L))
 
-    e_s_expand = expand_message(e_s_octs, expand_dst, e_s_len)
+    e_s_expand = expandMessage(e_s_octs, expand_dst, e_s_len)
 
-    e = hash_to_scalar(e_s_expand[0..(octet_scalar_length - 1)])
+    e = hash2scalar(e_s_expand[0..(octet_scalar_length - 1)])
 
-    s = hash_to_scalar(e_s_expand[octet_scalar_length..(e_s_len - 1)])
+    s = hash2scalar(e_s_expand[octet_scalar_length..(e_s_len - 1)])
 
 计算A
 
@@ -73,7 +73,7 @@ Verify
 
 .. math::
 
-    ProofVerify(PK, proof, header, ph, disclosed_messages, disclosed_indexes)
+    ProofVerify(PK, proof, header, ph, disclosedMessages, disclosedIndexes)
 
 同样生成generators、domain
 
@@ -87,7 +87,7 @@ Verify
 
 .. math::
 
-     if e(A, W + P2 * e) * e(B, -P2) != Identity_GT, return INVALID
+     if e(A, W + P2 * e) * e(B, -P2) != Identity_{GT}, return INVALID
 
      return VALID
 
@@ -98,7 +98,7 @@ ProofGen
 
 .. math::
 
-    proof = ProofGen(PK, signature, header, ph, messages, disclosed_indexes)
+    proof = ProofGen(PK, signature, header, ph, messages, disclosedIndexes)
 
 L为messages总数，R为披露的messages数，U为未披露的messages数
 
@@ -108,9 +108,9 @@ L为messages总数，R为披露的messages数，U为未披露的messages数
 
 .. math::
 
-    random_scalars = calculate_random_scalars(6+U)
+    randomScalars = calculateRandomScalars(6+U)
 
-    (r1, r2, \tilde{e}, \tilde{r}2, \tilde{r}3, \tilde{s}, \tilde{m}_j1, ..., \tilde{m}_jU) = random_scalars
+    (r1, r2, \tilde{e}, \tilde{r}2, \tilde{r}3, \tilde{s}, \tilde{m}_{j1}, ..., \tilde{m}_{jU}) = randomScalars
 
 计算中间参数
 
@@ -130,14 +130,14 @@ L为messages总数，R为披露的messages数，U为未披露的messages数
 
     C1 = A' * \tilde{e} + Q_1 * \tilde{r}2
 
-    C2 = D * (-\tilde{r}3) + Q_1 * \tilde{s} + H_j1 * \tilde{m}_j1 + ... + H_jU * \tilde{m}_jU
+    C2 = D * (-\tilde{r}3) + Q_1 * \tilde{s} + H_{j1} * \tilde{m}_{j1} + ... + H_{jU} * \tilde{m}_{jU}
 
 
 计算challenge，同样是hash2scalar
 
 .. math::
 
-    c = calculate_challenge(A', Abar, D, C1, C2, (i1, ..., iR), (msg_{i1}, ..., msg_{iR}), domain, ph)
+    c = calculateChallenge(A', Abar, D, C1, C2, (i_1, ..., i_R), (msg_{i1}, ..., msg_{iR}), domain, ph)
 
 计算proof
 
@@ -153,7 +153,7 @@ L为messages总数，R为披露的messages数，U为未披露的messages数
 
     for j in (j1, ..., jU): \hat{m}_j = c * msg_j + \tilde{m}_j mod r
 
-    proof = (A', Abar, D, c, \hat{e}, \hat{r}2, \hat{r}3, \hat{s}, (\hat{m}_j1, ..., \hat{m}_jU))
+    proof = (A', Abar, D, c, \hat{e}, \hat{r}2, \hat{r}3, \hat{s}, (\hat{m}_{j1}, ..., \hat{m}_{jU}))
 
 
 注意 :math:`j_1, ..., j_U` 是未披露的messages index
@@ -161,7 +161,9 @@ L为messages总数，R为披露的messages数，U为未披露的messages数
 ProofVerify
 ==========================================================
 
-    result = ProofVerify(PK, proof, header, ph, disclosed_messages, disclosed_indexes)
+.. math::
+
+    result = ProofVerify(PK, proof, header, ph, disclosedMessages, disclosedIndexes)
 
 同样生成generators、domain
 
@@ -207,15 +209,15 @@ ProofVerify
 
 .. math::
 
-    cv = calculate_challenge(A', Abar, D, C1, C2, (i1, ..., iR), (msg_{i1}, ..., msg_{iR}), domain, ph)
+    cv = calculateChallenge(A', Abar, D, C1, C2, (i_1, ..., i_R), (msg_{i1}, ..., msg_{iR}), domain, ph)
 
 检查cv是否与c相等
 
 .. math::
 
-    if A' == Identity_G1, return INVALID
+    if A' == Identity_{G1}, return INVALID
 
-    if e(A', W) * e(Abar, -P2) != Identity_GT, return INVALID
+    if e(A', W) * e(Abar, -P2) != Identity_{GT}, return INVALID
 
 
     e(A', W) * e(Abar, -P2)
@@ -226,7 +228,7 @@ ProofVerify
 
     = e(A * r1 * SK, P2) * e( A * SK * r1, -P2)
 
-    = Identity_GT
+    = Identity_{GT}
 
 
 security
