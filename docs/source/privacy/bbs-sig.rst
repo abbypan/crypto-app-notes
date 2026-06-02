@@ -118,7 +118,7 @@ L为messages总数，R为披露的messages数，U为未披露的messages数
 
     B = P1 + Q_1 * s + Q_2 * domain + H_1 * msg_1 + ... + H_L * msg_L
 
-    r3 = r1 ^ -1 mod r
+    r3 = r1 ^ -1~mod~r
 
     A' = A * r1
 
@@ -126,7 +126,7 @@ L为messages总数，R为披露的messages数，U为未披露的messages数
 
     D = B * r1 + Q_1 * r2
 
-    s' = r2 * r3 + s mod r
+    s' = r2 * r3 + s~mod~r
 
     C1 = A' * \tilde{e} + Q_1 * \tilde{r}2
 
@@ -143,15 +143,15 @@ L为messages总数，R为披露的messages数，U为未披露的messages数
 
 .. math::
 
-    \hat{e} = c * e + \tilde{e} mod r
+    \hat{e} = c * e + \tilde{e}~mod~r
 
-    \hat{r}2 = c * r2 + \tilde{r}2 mod r
+    \hat{r}2 = c * r2 + \tilde{r}2~mod~r
 
-    \hat{r}3 = c * r3 + \tilde{r}3 mod r
+    \hat{r}3 = c * r3 + \tilde{r}3~mod~r
 
-    \hat{s} = c * s' + \tilde{s} mod r
+    \hat{s} = c * s' + \tilde{s}~mod~r
 
-    for j in (j1, ..., jU): \hat{m}_j = c * msg_j + \tilde{m}_j mod r
+    for j in (j1, ..., jU): \hat{m}_j = c * msg_j + \tilde{m}_j~mod~r
 
     proof = (A', Abar, D, c, \hat{e}, \hat{r}2, \hat{r}3, \hat{s}, (\hat{m}_{j1}, ..., \hat{m}_{jU}))
 
