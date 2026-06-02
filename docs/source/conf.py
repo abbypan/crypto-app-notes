@@ -40,6 +40,9 @@ mathjax3_config = {
     'chtml': {
         'displayAlign': 'left',
     },
+    'svg': {
+        'displayAlign': 'left',
+    },
     'options': {
         'displayAlign': 'left',
     }
