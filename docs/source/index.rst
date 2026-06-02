@@ -221,7 +221,7 @@
    privacy/biohash
    privacy/oprfs
    privacy/longfellow
-   privacy/crescent-credentials
+   privacy/crescent
 
 
 
