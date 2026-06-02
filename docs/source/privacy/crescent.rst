@@ -41,7 +41,7 @@ credential与device public key绑定
 
 device public key -> message
 
-device public key自身的privacy需要保护，构造zkp
+device public key 隐藏
 
 提取public key的x值，Q = q_0 + 2^128 * q_1，记为 Q = (q_0, q_1)
 

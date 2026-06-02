@@ -98,10 +98,8 @@
    sig/eddsa
    sig/hedged-sig
    sig/bls-sig
-   sig/bbs-sig
    sig/frost
    sig/schnorr-sig
-   sig/cl-sig
 
 
 .. toctree::
@@ -213,13 +211,15 @@
    :caption: Privacy
 
    privacy/privacy
-   privacy/sd-jwt
    privacy/verifiable-cred
    privacy/differential-privacy
-   privacy/privacy-pass
-   privacy/daa
    privacy/biohash
+   privacy/daa
    privacy/oprfs
+   privacy/privacy-pass
+   privacy/sd-jwt
+   privacy/cl-sig
+   privacy/bbs-sig
    privacy/longfellow
    privacy/crescent
 
