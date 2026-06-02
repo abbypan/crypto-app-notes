@@ -36,6 +36,12 @@ html_theme = 'sphinx_rtd_theme'
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
-mathjax3_config = {'chtml': {'displayAlign': 'left',
-                             'displayIndent': '2em'}}
+mathjax3_config = {
+    'chtml': {
+        'displayAlign': 'left',
+    },
+    'options': {
+        'displayAlign': 'left',
+    }
+}
 

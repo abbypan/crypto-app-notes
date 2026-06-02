@@ -50,13 +50,13 @@ Sign
 
 .. math::
 
-    e_s_octs = serialize((SK, domain, msg_1, ..., msg_L))
+    eSOcts = serialize(SK, domain, msg_1, ..., msg_L)
 
-    e_s_expand = expandMessage(e_s_octs, expand_dst, e_s_len)
+    eSExpand = expandMessage(eSOcts, expandDST, eSLen)
 
-    e = hash2scalar(e_s_expand[0..(octet_scalar_length - 1)])
+    e = hash2scalar(eSExpand[0..(octetScalarLength - 1)])
 
-    s = hash2scalar(e_s_expand[octet_scalar_length..(e_s_len - 1)])
+    s = hash2scalar(eSExpand[octetScalarLength..(eSLen - 1)])
 
 计算A
 
