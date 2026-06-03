@@ -222,6 +222,7 @@
    privacy/bbs-sig
    privacy/longfellow
    privacy/crescent
+   privacy/semaphore
 
 
 

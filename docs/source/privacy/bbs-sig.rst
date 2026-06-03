@@ -10,6 +10,15 @@ doc
 
 `Slide: The BBS Signature Scheme <https://datatracker.ietf.org/meeting/114/materials/slides-114-cfrg-bbs-signature-scheme-pdf-00>`_
 
+use case
+==========================================================
+
+改进oauth2式的bearer access token
+
+改进oauth2 DPoP式的校验形态，不用hmac/hash啥的
+
+verifiable credential，例如driver license
+
 overview
 ==========================================================
 
@@ -21,7 +30,7 @@ G1/G2均为r质数阶的subgroup，public key在G2，signature在G1。
 
 random要求CSPRNG。
 
-基于IKM，结合keyinfo，派生私钥SK。
+基于IKM trust setup，结合keyinfo，派生私钥SK。
 
 PK = P2 * SK, P2为G2的生成元。
 
@@ -91,7 +100,7 @@ Verify
 
      return VALID
 
-pairing比较简单，:math:`W = octets_to_pubkey(PK) = P2 * SK`
+pairing比较简单，:math:`W = octetsToPubkey(PK) = P2 * SK`
 
 ProofGen
 ==========================================================
@@ -252,12 +261,4 @@ DRBG
 
 proof replay attack
 
-use case
-==========================================================
-
-改进oauth2式的bearer access token
-
-改进oauth2 DPoP式的校验形态，不用hmac/hash啥的
-
-verifiable credential，例如driver license
 

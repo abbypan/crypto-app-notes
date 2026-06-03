@@ -5,6 +5,12 @@ https://github.com/microsoft/crescent-credentials/
 
 https://eprint.iacr.org/2024/2013
 
+use case
+------------
+
+selective disclosure
+
+
 credential
 ----------------
 
@@ -16,6 +22,8 @@ zkp groth16
 ---------------
 
 Crescent生成PK、VK， 提供的公开参数
+
+PK约几十MB，VK在1KB左右
 
 用于对Credentials做Groth16 zk-snarks, committed attr(基于sub-prover), selective disclose attr (revealed)
 

@@ -3,6 +3,11 @@ longfellow
 
 https://github.com/google/longfellow-zk/tree/main
 
+use case
+-------------
+
+selective disclosure
+
 summary
 -------------
 

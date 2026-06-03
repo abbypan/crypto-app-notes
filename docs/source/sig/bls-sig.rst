@@ -12,6 +12,13 @@ doc
 
 `BLS Signatures <https://2π.com/22/bls-signatures/>`_
 
+use case
+==========================================================
+
+blockchain的transaction block size优化，节省signature空间
+
+涉及cash的rogue key attack风险性更高
+
 KeyValidate
 ==========================================================
 
@@ -155,9 +162,3 @@ side channel attack (constant time)
 
 CSPRNG
 
-use case
-==========================================================
-
-blockchain的transaction block size优化，节省signature空间
-
-涉及cash的rogue key attack风险性更高
