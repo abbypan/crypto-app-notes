@@ -220,11 +220,10 @@
    privacy/sd-jwt
    privacy/cl-sig
    privacy/bbs-sig
+   privacy/semaphore
    privacy/longfellow
    privacy/crescent
-   privacy/semaphore
-
-
+   privacy/vega
 
 
 

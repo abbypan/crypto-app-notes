@@ -6,8 +6,6 @@ doc
 
 `The BBS Signature Scheme <https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/>`_
 
-`Zcash Overwinter Consensus and Sapling Cryptography Review <https://research.nccgroup.com/wp-content/uploads/2020/07/NCC_Group_Zcash2018_Public_Report_2019-01-30_v1.3.pdf>`_
-
 `Slide: The BBS Signature Scheme <https://datatracker.ietf.org/meeting/114/materials/slides-114-cfrg-bbs-signature-scheme-pdf-00>`_
 
 use case
@@ -22,15 +20,13 @@ verifiable credential，例如driver license
 overview
 ==========================================================
 
-bbs的核心特征是short group Signature，支持zkp，选择性披露部分消息(Selective Disclosure)，而proof of possession本身并不泄漏与原始signature的关联(Unlinkable)。
+bbs的核心特征是short signature，支持zkp，选择性披露部分消息(Selective Disclosure)，而proof of possession本身并不泄漏与原始signature的关联(Unlinkable)。
 
 BLS12-381 pairing curve，同zcash，117~120 bits security。
 
 G1/G2均为r质数阶的subgroup，public key在G2，signature在G1。
 
 random要求CSPRNG。
-
-基于IKM trust setup，结合keyinfo，派生私钥SK。
 
 PK = P2 * SK, P2为G2的生成元。
 
@@ -55,7 +51,7 @@ Sign
 
       domain = calculateDomain(PK, Q_1, Q_2, (H_1, ..., H_L), header)
 
-基于SK、domain, msg1 ... msgL 计算 (e, s)，一个expand_message，两个hash2scalar映射。
+基于SK、domain, msg1 ... msgL 计算 (e, s)，一个expandMessage，两个hash2scalar映射。
 
 .. math::
 
@@ -100,7 +96,12 @@ Verify
 
      return VALID
 
-pairing比较简单，:math:`W = octetsToPubkey(PK) = P2 * SK`
+pairing比较简单，
+
+.. math::
+
+        W = octetsToPubkey(PK) = P2 * SK
+
 
 ProofGen
 ==========================================================

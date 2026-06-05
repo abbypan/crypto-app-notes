@@ -8,6 +8,10 @@ use case
 
 selective disclosure
 
+pk 200 KB, VK 200KB, proof 300KB
+
+setup 5s, prov 500ms, verify 250ms
+
 summary
 -------------
 
