@@ -1,21 +1,21 @@
 BBS Signature
 #################
 
-doc
-==========================================================
-
-`The BBS Signature Scheme <https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/>`_
-
 `Slide: The BBS Signature Scheme <https://datatracker.ietf.org/meeting/114/materials/slides-114-cfrg-bbs-signature-scheme-pdf-00>`_
+
+https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/
+
+https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-blind-signatures/
+
 
 use case
 ==========================================================
 
 改进oauth2式的bearer access token
 
-改进oauth2 DPoP式的校验形态，不用hmac/hash啥的
+改进oauth2 DPoP式的校验形态
 
-verifiable credential，例如driver license
+verifiable credential，例如driver license, selective disclosure
 
 overview
 ==========================================================
@@ -26,59 +26,55 @@ BLS12-381 pairing curve，同zcash，117~120 bits security。
 
 G1/G2均为r质数阶的subgroup，public key在G2，signature在G1。
 
+G1/G2 的base point 为 BP1/BP2。
+
 random要求CSPRNG。
 
-PK = P2 * SK, P2为G2的生成元。
+PK = BP2 * SK, P2为G2的生成元。
 
-header 配置信息，signature/proof中都含header。
-
-messages 内容信息，signature全量，proof按需。
-
-Sign
+CoreSign
 ==========================================================
 
-    Sign(SK, PK, header, messages)
+.. math::
+
+    CoreSign(SK, PK, generators, header, messages, api_id)
 
 生成确定的generators
 
 .. math::
 
-    (Q_1, Q_2, H_1, ..., H_L) = createGenerators(L+2)
+    (Q_1, H_1, ..., H_L) = createGenerators(L+1, apiId)
 
 基于PK、generators、header计算domain，一个hash2scalar映射。
 
 .. math::
 
-      domain = calculateDomain(PK, Q_1, Q_2, (H_1, ..., H_L), header)
+      domain = calculateDomain(PK, Q_1, (H_1, ..., H_L), header, apiId)
 
-基于SK、domain, msg1 ... msgL 计算 (e, s)，一个expandMessage，两个hash2scalar映射。
+基于SK、domain, msg1 ... msgL 计算 e
 
 .. math::
 
-    eSOcts = serialize(SK, domain, msg_1, ..., msg_L)
-
-    eSExpand = expandMessage(eSOcts, expandDST, eSLen)
-
-    e = hash2scalar(eSExpand[0..(octetScalarLength - 1)])
-
-    s = hash2scalar(eSExpand[octetScalarLength..(eSLen - 1)])
+    e = hash2scalar(serialize((SK, msg_1, ..., msg_L, domain)), hash_to_scalar_dst)
 
 计算A
 
+P1 为 G1 内的常数point，可以为BP1或其他point
+
 .. math::
 
-    B = P1 + Q_1 * s + Q_2 * domain + H_1 * msg_1 + ... + H_L * msg_L
+    B = P1 + Q_1 * domain + H_1 * msg_1 + ... + H_L * msg_L
 
     A = B * (1 / (SK + e))
 
-    signature = (A, e, s)
+    signature = (A, e)
 
-Verify
+CoreVerify
 ==========================================================
 
 .. math::
 
-    ProofVerify(PK, proof, header, ph, disclosedMessages, disclosedIndexes)
+    CoreVerify(PK, signature, generators, header, messages, api_id)
 
 同样生成generators、domain
 
@@ -86,159 +82,42 @@ Verify
 
 .. math::
 
-    B = P1 + Q_1 * s + Q_2 * domain + H_1 * msg_1 + ... + H_L * msg_L
+    B = P1 + Q_1 * domain + H_1 * msg_1 + ... + H_L * msg_L
 
 校验签名
 
 .. math::
 
-     if e(A, W + P2 * e) * e(B, -P2) != Identity_{GT}, return INVALID
+     W = octetsToPubkey(PK) = BP2 * SK
 
-     return VALID
-
-pairing比较简单，
-
-.. math::
-
-        W = octetsToPubkey(PK) = P2 * SK
+     h(A, W) * h(A * e - B, BP2) = Identity_{GT}
 
 
 ProofGen
 ==========================================================
 
-.. math::
+实现 selective disclosure
 
-    proof = ProofGen(PK, signature, header, ph, messages, disclosedIndexes)
+注意以 present_header (ph) 区分不同 proof
 
-L为messages总数，R为披露的messages数，U为未披露的messages数
+ph 由prover给出，必须 随机、区隔 dst_domain，防钓鱼
 
-同样生成generators、domain
+或者ph由直接由verifier给出
 
-生成random列表
 
-.. math::
+区分 hide attributes, disclosure attributes
 
-    randomScalars = calculateRandomScalars(6+U)
-
-    (r1, r2, \tilde{e}, \tilde{r}2, \tilde{r}3, \tilde{s}, \tilde{m}_{j1}, ..., \tilde{m}_{jU}) = randomScalars
-
-计算中间参数
+对于每个hide attribute  m_j，通过challenge c，随机数 m'_j，构造 m~_j
 
 .. math::
 
-    B = P1 + Q_1 * s + Q_2 * domain + H_1 * msg_1 + ... + H_L * msg_L
+        m~_j = m'_j + m_j * c
 
-    r3 = r1 ^ -1~mod~r
-
-    A' = A * r1
-
-    Abar = A' * (-e) + B * r1
-
-    D = B * r1 + Q_1 * r2
-
-    s' = r2 * r3 + s~mod~r
-
-    C1 = A' * \tilde{e} + Q_1 * \tilde{r}2
-
-    C2 = D * (-\tilde{r}3) + Q_1 * \tilde{s} + H_{j1} * \tilde{m}_{j1} + ... + H_{jU} * \tilde{m}_{jU}
-
-
-计算challenge，同样是hash2scalar
-
-.. math::
-
-    c = calculateChallenge(A', Abar, D, C1, C2, (i_1, ..., i_R), (msg_{i1}, ..., msg_{iR}), domain, ph)
-
-计算proof
-
-.. math::
-
-    \hat{e} = c * e + \tilde{e}~mod~r
-
-    \hat{r}2 = c * r2 + \tilde{r}2~mod~r
-
-    \hat{r}3 = c * r3 + \tilde{r}3~mod~r
-
-    \hat{s} = c * s' + \tilde{s}~mod~r
-
-    for j in (j1, ..., jU): \hat{m}_j = c * msg_j + \tilde{m}_j~mod~r
-
-    proof = (A', Abar, D, c, \hat{e}, \hat{r}2, \hat{r}3, \hat{s}, (\hat{m}_{j1}, ..., \hat{m}_{jU}))
-
-
-注意 :math:`j_1, ..., j_U` 是未披露的messages index
 
 ProofVerify
 ==========================================================
 
-.. math::
-
-    result = ProofVerify(PK, proof, header, ph, disclosedMessages, disclosedIndexes)
-
-同样生成generators、domain
-
-计算C1
-
-.. math::
-
-    C1 = (Abar - D) * c + A' * \hat{e} + Q_1 * \hat{r}2
-
-       = (A' * (-e) + B * r1 - D) * c + A' * \hat{e} + Q_1 * \hat{r}2
-
-       = (A' * (-e) - Q_1 * r2) * c + A' * \hat{e} + Q_1 * \hat{r}2
-
-       = A' * (\hat{e} - e * c) + Q_1 * (\hat{r}2 - r2 * c)
-
-       = A' * \tilde{e} + Q_1 * \tilde{r}2
-
-       = C1
-
-
-计算C2
-
-.. math::
-
-    T = P1 + Q_2 * domain + H_{i1} * msg_{i1} + ... + H_{iR} * msg_{iR}
-
-    C2 = T * c - D * \hat{r}3 + Q_1 * \hat{s} + H_{j1} * \hat{m}_{j1} + ... + H_{jU} * \hat{m}_{jU}
-
-       = (P1 + Q_2 * domain + H_{i1} * msg_{i1} + ... + H_{iR} * msg_{iR}) * c - D * (c * r3 + \tilde{r}3) + Q_1 * (c * s' + \tilde{s})  + H_{j1} * (c * msg_{j1} + \tilde{m}_{j1}) + ... + H_{jU} * (c * msg_{jU} + \tilde{m}_{jU})
-
-       = (P1 + Q_2 * domain + H_1 * msg_1 + ... + H_L * msg_L - D * r3 + Q_1 * s') * c - D * \tilde{r}3 + Q_1 * \tilde{s} + H_{j1} * \tilde{m}_{j1} + ... + H_{jU} * \tilde{m}_{jU} 
-
-       = (B - Q_1 * s - D * r3 + Q_1 * s') * c + D * (-\tilde{r}3) + Q_1 * \tilde{s} + H_{j1} * \tilde{m}_{j1} + ... + H_{jU} * \tilde{m}_{jU} 
-
-       = (B + Q_1 * r2 * r3 - B * r1 * r3 - Q_1 * r2 * r3) * c + D * (-\tilde{r}3) + Q_1 * \tilde{s} + H_{j1} * \tilde{m}_{j1} + ... + H_{jU} * \tilde{m}_{jU} 
-
-       = D * (-\tilde{r}3) + Q_1 * \tilde{s} + H_{j1} * \tilde{m}_{j1} + ... + H_{jU} * \tilde{m}_{jU}   
-
-       = C2
-
-
-计算cv 
-
-.. math::
-
-    cv = calculateChallenge(A', Abar, D, C1, C2, (i_1, ..., i_R), (msg_{i1}, ..., msg_{iR}), domain, ph)
-
-检查cv是否与c相等
-
-.. math::
-
-    if A' == Identity_{G1}, return INVALID
-
-    if e(A', W) * e(Abar, -P2) != Identity_{GT}, return INVALID
-
-
-    e(A', W) * e(Abar, -P2)
-
-    = e(A', P2 * SK) * e(A' * (-e) + B * r1, -P2)
-
-    = e(A * r1 * SK, P2) * e( (A * (-e) + B) * r1, -P2)
-
-    = e(A * r1 * SK, P2) * e( A * SK * r1, -P2)
-
-    = Identity_{GT}
+pairing
 
 
 security
@@ -261,5 +140,15 @@ G1与G2不同构
 DRBG
 
 proof replay attack
+
+
+blind signature
+===================
+
+增加一个 s_user 的hide attr，受secure element保护, non-transferability
+
+issuer 仅知晓 C = s_user * H0，不知晓 s_user，blind issuance
+
+proof时，s_user总是隐藏
 
 
