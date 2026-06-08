@@ -98,12 +98,27 @@ ProofGen
 
 实现 selective disclosure
 
+ph
+----
+
 注意以 present_header (ph) 区分不同 proof
 
 ph 由prover给出，必须 随机、区隔 dst_domain，防钓鱼
 
 或者ph由直接由verifier给出
 
+
+c
+----
+
+构造challenge c
+
+        proof_init_output = (Abar, Bbar, D, T1, T2, domain)
+
+        c=H(proof_init_output ∥ disclosed messages ∥ disclosed indexes ∥ ph ∥ other context)
+
+hide
+--------
 
 区分 hide attributes, disclosure attributes
 
