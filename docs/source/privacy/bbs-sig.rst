@@ -7,6 +7,10 @@ https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/
 
 https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-blind-signatures/
 
+https://github.com/microsoft/bbs-node-reference
+
+https://github.com/mattrglobal/pairing_crypto
+
 
 use case
 ==========================================================
